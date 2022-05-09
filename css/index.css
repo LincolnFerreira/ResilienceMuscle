@@ -1,0 +1,84 @@
+@font-face {
+    font-family: Jura;
+    src: url(../css/fonts/Jura-VariableFont_wght.ttf);
+  }
+body{
+    background-color: #212121;
+    color: #fff;
+    font-family: Jura;
+
+}
+
+#div_banner{
+    background-image: url(../images/background_index.png);
+    background-size: cover;
+    position: absolute;
+    height: 70vh;
+    width: 100%;
+    z-index: -1;
+
+};  
+
+#nav-bar{
+
+}
+#nav-bar ul{
+    display: flex;
+    flex-direction: row;
+    color: whitesmoke;
+    justify-content: space-around;
+    
+}
+#img_menu_logo{
+    margin-top: 20px;
+
+}
+#nav-bar ul li{
+    margin: 30px 30px 30px 30px ;
+    cursor: pointer;
+
+}
+#nav-bar ul li:hover{
+    border:solid;
+    border-color: #42257C;
+
+}
+
+#nav-bar #div_menu_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+#button_cadastrar{
+    background-color: #fff;
+    color: #42257C;
+}
+#button_cadastrar:hover{
+    border-color: #42257C;
+    background-color: transparent;
+    border: solid;
+    color: white;
+}
+#button_logar{
+    background-color: #42257C;
+    color: white;
+}
+#button_logar:hover{
+    border-color: #42257C;
+    background-color: transparent;
+    border: solid;
+    color: white;
+}
+#p_banner{
+    text-align: start;
+}
+#div_banner_frase{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#div_frase{
+
+}
