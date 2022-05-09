@@ -1,44 +1,44 @@
-@font-face {
-    font-family: Jura;
-    src: url(../css/fonts/Jura-VariableFont_wght.ttf);
-  }
 body{
     background-color: #212121;
     color: #fff;
     font-family: Jura;
+    overflow-x: hidden;
 
 }
-
+/* imagem banner index*/
 #div_banner{
-    background-image: url(../images/background_index.png);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #212121 100%), url(../images/background_index.png);
     background-size: cover;
     position: absolute;
     height: 70vh;
     width: 100%;
     z-index: -1;
 
-};  
-
-#nav-bar{
-
 }
+/* */
 #nav-bar ul{
     display: flex;
     flex-direction: row;
     color: whitesmoke;
     justify-content: space-around;
+    align-items: center;
     
 }
-#img_menu_logo{
-    margin-top: 20px;
-
+#logo{
+    cursor: pointer;
+}
+#logo:hover{
+    cursor: pointer;
+    width: 110px;
 }
 #nav-bar ul li{
     margin: 30px 30px 30px 30px ;
     cursor: pointer;
-
+    border:solid;
+    border-color: transparent;
 }
 #nav-bar ul li:hover{
+
     border:solid;
     border-color: #42257C;
 
@@ -48,29 +48,9 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    width: 20%;
 }
 
-#button_cadastrar{
-    background-color: #fff;
-    color: #42257C;
-}
-#button_cadastrar:hover{
-    border-color: #42257C;
-    background-color: transparent;
-    border: solid;
-    color: white;
-}
-#button_logar{
-    background-color: #42257C;
-    color: white;
-}
-#button_logar:hover{
-    border-color: #42257C;
-    background-color: transparent;
-    border: solid;
-    color: white;
-}
 #p_banner{
     text-align: start;
 }
@@ -80,5 +60,53 @@ body{
     align-items: center;
 }
 #div_frase{
+    display: flex;
+    flex-direction: column;
+}
+#div_banner_button{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px 0px 0px 0px;
+}
+#div_banner_button button{
+    align-self: flex-end;
+}
+#div_motiv{
+    width: 45%;
+    text-align: center;
+}
 
+#mountain-image{
+    width: 100%;
+    background-color: #fff;
+    background-image: url(../images/mountain1.png);
+    background-size:auto;
+    background-repeat: no-repeat;
+    height: 450px;
+}
+
+#div_listagem{
+    
+}
+#div_checks{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#div_check1{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+.gg-check{
+    color: #00DA87;
+    height: 30px !important;
+}
+
+.gg-check::after{
+    color: #00DA87;
+    width: 12px !important;
+    height: 20px !important;
 }

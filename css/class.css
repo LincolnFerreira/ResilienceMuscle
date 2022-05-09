@@ -1,8 +1,59 @@
-
-.button_menu{
-    margin: 20px;
+@font-face {
+    font-family: Jura;
+    src: url(../css/fonts/Jura-VariableFont_wght.ttf);
+  
+}
+.container-lg{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 50px 0px 0px 0px;
+}
+.container-column{
+    flex-direction: column;
+    align-items: center;
+}
+.container-md{
+    width: 50%;
+    display: flex;
+    margin: 10px;
+}
+.button{
     border: none;
     border-radius: 4px;
-    padding: 0px 15px 0px 15px;
-    font-weight:600;
+    padding: 10px 15px 10px 15px;
+    font-weight:500;
+    display: flex;
+    align-items: center;
+    -webkit-box-shadow: 0px 7px 19px -3px #000000; 
+    box-shadow: 0px 7px 19px -3px #000000;
+}
+.button-destaque {
+    border: solid;
+    border-color: transparent;
+    background-color: #42257C;
+    color: whitesmoke;
+
+}
+.font-title{
+    font-size: 30px;
+    text-align: center;
+}
+.font-destaque{
+    font-weight: bolder;
+    color: #5666F6;
+}
+.p_desabled{
+    color: #7E7E7E;
+}
+.button-destaque:hover .gg-arrow-right{
+    animation: animation-to-right .4s ease infinite alternate;
+}
+@keyframes animation-to-right {
+    from{
+        transform: translateX(0);
+    }    
+    to{
+        transform: translateX(4px);
+    }    
 }
