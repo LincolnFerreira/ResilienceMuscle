@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/class.css">
+    <link href='https://css.gg/css' rel='stylesheet'>
+    <title>Cadastrar-se</title>
+    <script src="https://kit.fontawesome.com/cbc73789ee.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <div class ="div_banner" id="background-cadastro"></div>
+        <!-- MENU -->
+        <div class="flex-row" id="nav-bar">
+            <img src="../images/Ativo 5.png" width="200px" id="logo" />
+            <ul class="flex-row">
+                <li href="./index.html">Inicio</li>
+                <li href=".">Como Funciona ?</li>
+                <li href=".">Projetos</li>
+                <li href=".">Contato</li>
+            </ul>
+            <div id="div_button">
+                <a href="./cadastro.html"><button class="button" id="button_cadastro" href="./cadastro.html">Cadastrar-se</button></a>
+               <a href="./login.html"> <button class="button" id="button_login">Entrar</button></a>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="container-lg container-start">
+            <div class="flex-column container-cadastro">
+
+            <p class="p-light">Comece de graça</p>
+            <h2>Criar uma conta.</h2>
+            <p class="p-light">Já é um membro ? <span class="span-destaque">faça login</span></p>
+        <div class="flex-column">
+            <div class="flex-row">
+                <div class="form">
+                    <input type="text" class="input-form" placeholder="teste">
+                    <label class="label-form">Nome</label>
+                </div>
+                <div class="form">
+                    <input type="text" class="input-form" placeholder="teste">
+                    <label class="label-form">Sobrenome</label>
+                </div>
+            </div>
+            <div class="form">
+                <input type="date" class="input-form" placeholder="teste">
+                <label class="label-form">Data de nascimento</label>
+            </div>
+            <div class="form">
+                <input type="text" class="input-form" placeholder="teste">
+                <label class="label-form">Email</label>
+            </div>
+            <div class="form">
+                <input type="text" class="input-form" placeholder="teste">
+                <label class="label-form">Senha</label>
+            </div>
+
+            <div class="form">
+                <input type="text" class="input-form" placeholder="teste">
+                <label class="label-form">Confirma senha:</label>
+            </div>
+        </div>
+        <button class="button" id="button_login">Cadastrar</button>
+        </div>
+        </div>
+    <!-- RODAPÉ -->
+
+    <footer class="container-lg flex-column">
+        <div class="flex-row div_footer_item">
+            <div>
+                <img src="../images/Ativo 5.png" width="220px" id="logo">
+            </div>
+            <div class="flex-column">
+                <div class="flex-row icones">
+                    <div class="fa"><i class="fa-brands fa-facebook-square fa-2xl"></i></div>
+                    <div class="fa"><i class="fa-brands fa-twitter-square fa-2xl"></i></div>
+                </div>
+                <div class="flex-row icones">
+                    <div class="fa"><i class="fa-brands fa-linkedin fa-2xl"></i></div>
+                    <div class="fa"><i class="fa-brands fa-instagram fa-2xl"></i></div>
+                </div>
+                <div class="flex-column">
+                    <button class="button button-border">Contato</button>
+                </div>
+            </div>
+        </div>
+        <div id="div_direitos">Todos os direitos reservados © Copy-right 2022</div>
+    </footer>
 </body>
+
 </html>

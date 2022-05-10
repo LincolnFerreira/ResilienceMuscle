@@ -16,19 +16,19 @@
 
 <body>
     <!-- BANNER COM IMAGEM-->
-    <div id="div_banner"></div>
+    <div class="div_banner background-index"></div>
     <!-- MENU -->
     <div class="flex-row" id="nav-bar">
         <img src="../images/Ativo 5.png" width="200px" id="logo" />
         <ul class="flex-row">
-            <li href=".">Inicio</li>
+            <li href="./index.html">Inicio</li>
             <li href=".">Como Funciona ?</li>
             <li href=".">Projetos</li>
             <li href=".">Contato</li>
         </ul>
         <div id="div_button">
-            <button class="button" id="button_cadastro">Cadastrar-se</button>
-            <button class="button" id="button_login">Entrar</button>
+            <a href="./cadastro.html"><button class="button" id="button_cadastro" href="./cadastro.html">Cadastrar-se</button></a>
+           <a href="./login.html"> <button class="button" id="button_login">Entrar</button></a>
         </div>
     </div>
     <!-- BANNER FRASE -->
@@ -44,17 +44,21 @@
                 </button>
             </div>
         </div>
-        <div></div>
+        <div id="background-cadastro">
+s
+        </div>
     </div>
+    <!-- frase motivacional-->
     <div class="container-lg container-column">
         <div id="div_motiv">
-            <h2><span>“Derrota</span> é uma coisa que você só saboreia se quiser. Porque se você souber lidar com essa
+            <h3><span class="span_destaque">“Derrota</span> é uma coisa que você só saboreia se quiser. Porque se você souber lidar com essa
                 sensação, você transforma isso em motor pra voltar melhor,
                 chegar e mostrar que você tem condição de fazer melhor. Você não está superando ninguem, você tá
-                superando, na realidade, a pessoa mais difícil que tem pela frente, você mesmo!”<span
-                    class="p_desabled"> by Paulo Muzy</span>
-            </h2>
+                superando, na realidade, a pessoa mais difícil que tem pela frente, você mesmo!”
+                <span class="p_desabled"> by Paulo Muzy</span>
+            </h3>
         </div>
+        <!-- escalador image-->
         <div id="mountain-image">
             <div class="flex-column mountain-text">
                 <div class="flex-row div_checks" id="check1">
@@ -80,21 +84,24 @@
             </div>
         </div>
     </div>
+    <!-- RODAPÉ -->
     <footer class="container-lg flex-column">
         <div class="flex-row div_footer_item">
-            <div><img src="../images/Ativo 5.png" width="300px"></div>
+            <div>
+                <img src="../images/Ativo 5.png" width="220px" id="logo">
+            </div>
             <div class="flex-column">
-                <div class="flex-row">
+                <div class="flex-row icones">
                     <div class="fa"><i class="fa-brands fa-facebook-square fa-2xl"></i></div>
                     <div class="fa"><i class="fa-brands fa-twitter-square fa-2xl"></i></div>
                 </div>
-                <div class="flex-row">
-                    <div class="fa"><i class="fa-brands fa-youtube fa-2xl"></i></div>
+                <div class="flex-row icones">
+                    <div class="fa"><i class="fa-brands fa-linkedin fa-2xl"></i></div>
                     <div class="fa"><i class="fa-brands fa-instagram fa-2xl"></i></div>
                 </div>
                 <div class="flex-column">
-                <button class="button button-border">Contato</button>
-                    </div>
+                    <button class="button button-border">Contato</button>
+                </div>
             </div>
         </div>
         <div id="div_direitos">Todos os direitos reservados © Copy-right 2022</div>
