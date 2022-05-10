@@ -3,11 +3,38 @@
     src: url(../css/fonts/Jura-VariableFont_wght.ttf);
   
 }
+body{
+    background-color: #212121;
+    color: #fff;
+    font-family: Jura;
+
+}
+
+.fa{
+    padding: 10px;
+
+}
+.fa-instagram{
+    display: flex !important;
+    justify-content: center;
+    padding-right: -5px !important;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
 .container-lg{
     display: flex;
     width: 100%;
     justify-content: center;
-    margin: 50px 0px 0px 0px;
+    padding: 20px 50px 20px 50px;
+}
+.div_footer_item{
 }
 .container-column{
     flex-direction: column;
@@ -19,14 +46,22 @@
     margin: 10px;
 }
 .button{
-    border: none;
     border-radius: 4px;
     padding: 10px 15px 10px 15px;
+    margin: 10px 10px 10px 10px;
     font-weight:500;
-    display: flex;
     align-items: center;
     -webkit-box-shadow: 0px 7px 19px -3px #000000; 
     box-shadow: 0px 7px 19px -3px #000000;
+}
+.button-border{
+    border-radius: 24px;
+    padding-left: 34px;
+    padding-right: 34px;
+    border: none;
+    border-color: transparent;
+    background-color: #00DA87;
+    color: whitesmoke;
 }
 .button-destaque {
     border: solid;
@@ -57,3 +92,4 @@
         transform: translateX(4px);
     }    
 }
+

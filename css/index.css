@@ -1,10 +1,3 @@
-body{
-    background-color: #212121;
-    color: #fff;
-    font-family: Jura;
-    overflow-x: hidden;
-
-}
 /* imagem banner index*/
 #div_banner{
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #212121 100%), url(../images/background_index.png);
@@ -13,100 +6,152 @@ body{
     height: 70vh;
     width: 100%;
     z-index: -1;
-
 }
-/* */
+/*  Menu  */
+#nav-bar{
+    align-items: center;
+    justify-content: space-around;
+    
+}
 #nav-bar ul{
-    display: flex;
-    flex-direction: row;
     color: whitesmoke;
     justify-content: space-around;
     align-items: center;
     
 }
-#logo{
-    cursor: pointer;
+#nav-bar ul li:hover{
+    border:solid;
+    border-color: #42257C;
+
 }
-#logo:hover{
-    cursor: pointer;
-    width: 110px;
+.fa-xl{
+    font-size: 1.7em !important;
+    margin: 0px 0px 0px 0px;
 }
 #nav-bar ul li{
     margin: 30px 30px 30px 30px ;
     cursor: pointer;
     border:solid;
     border-color: transparent;
-}
-#nav-bar ul li:hover{
 
-    border:solid;
+}
+h3{
+    margin-bottom:5px;
+    margin-top: 17px;
+}
+h3 span{
+    background-color: #00DA87;
+}
+
+#logo{
+    cursor: pointer;
+
+}
+#logo:hover{
+    cursor: pointer;
+    width: 210px;
+
+}
+#button_cadastro{
+    border: 0.5px solid transparent;
+    background-color: #fff;
+    color: #42257C;
+
+    font-weight: 600;
+}
+#button_cadastro:hover{
+    border: 0.5px solid transparent;
+    background-color: transparent;
+    color: white;
+
     border-color: #42257C;
-
 }
 
-#nav-bar #div_menu_button{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 20%;
+#button_login{
+    background-color: #42257C;
+    color: #fff;
+    border: 0.5px solid transparent;
+    font-weight: 600;
 }
-
+#button_login:hover{
+    background-color: transparent;
+    color: white;
+    border: 0.5px solid white;
+}
+/* ACABA MENU */
 #p_banner{
     text-align: start;
+
 }
 #div_banner_frase{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
+    height: 350px;
 }
 #div_frase{
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 30px;
 }
 #div_banner_button{
     display: flex;
     flex-direction: column-reverse;
-    padding: 20px 0px 0px 0px;
+    margin: 40px 0px 0px 40px;
 }
 #div_banner_button button{
     align-self: flex-end;
 }
+
 #div_motiv{
     width: 45%;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #mountain-image{
-    width: 100%;
-    background-color: #fff;
-    background-image: url(../images/mountain1.png);
-    background-size:auto;
+    width: 90%;
+    background-color: #606060;
+    background-image: url(../images/Ativo\ 9.png);
     background-repeat: no-repeat;
     height: 450px;
 }
-
-#div_listagem{
-    
-}
-#div_checks{
+.mountain-text{
     width: 100%;
-    display: flex;
+}
+
+ .div_checks{
+    width: 100%;
     justify-content: center;
     align-items: center;
+}
 
-}
-#div_check1{
-    display: flex;
-    align-items: center;
-    color: black;
-}
 .gg-check{
     color: #00DA87;
-    height: 30px !important;
 }
+    /*
+#div_check1{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    color: black;
+}
+#div_check1 h6{
+    padding-left: 15px;
+}
+
 
 .gg-check::after{
     color: #00DA87;
     width: 12px !important;
     height: 20px !important;
+} */
+
+.div_footer_item{
+    justify-content: space-between;
+    align-items: center;
+}
+#div_direitos{
+    align-self: center;
+    justify-self: center;
 }
