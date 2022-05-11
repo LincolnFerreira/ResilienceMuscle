@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    quantos dias vai na academia ? <input id="input_qtd_dias">
+    <button onclick="exibeRotina()">Exibir rotina mensal</button>
+    <div id="div_msg"></div>
+</body>
+</html>
+<script>
+    function exibeRotina(){
+        var qtdDias = Number(input_qtd_dias.value);
+        var i = 1;
+        while(i < 30){
+            var contador = i + qtdDias;
+            if(i == 1){
+                div_msg.innerHTML += `Dia ${i} - Musculação <br>`;
+                i++
+            }else if(qtdDias % i != 0){
+                div_msg.innerHTML += `Dia ${i} - não vai <br>`;
+                i++
+
+                }else{
+                div_msg.innerHTML += `Dia ${i} - Musculação <br>`;
+                i++
+
+            }
+            
+
+        }
+    }
+</script>

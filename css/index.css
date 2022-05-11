@@ -9,7 +9,7 @@
     
 }
 #nav-bar ul{
-    color: whitesmoke;
+    color: var(--white);
     justify-content: space-around;
     align-items: center;
     
@@ -24,7 +24,7 @@
 
 }
 #nav-bar ul li:hover{
-    border:0.5px solid #00DA87;
+    border:0.5px solid var(--green);
     transition: all 0.5s ease-in-out;
 
 
@@ -39,7 +39,7 @@ h3{
     margin-top: 17px;
 }
 .span_destaque{
-    background-color: #00DA87;
+    background-color: var(--green);
 }
 
 #logo{
@@ -53,29 +53,29 @@ h3{
 }
 #button_cadastro{
     border: 0.5px solid transparent;
-    background-color: #fff;
-    color: #42257C;
+    background-color: var(--white);
+    color: var(--color-primary);
 
     font-weight: 600;
 }
 #button_cadastro:hover{
     border: 0.5px solid transparent;
-    background-color: transparent;
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--white);
 
-    border-color: #42257C;
+    border-color: var(--color-primary);
 }
 
 #button_login{
-    background-color: #42257C;
-    color: #fff;
+    background-color: var(--color-primary);
+    color: var(--white);
     border: 0.5px solid transparent;
     font-weight: 600;
 }
 #button_login:hover{
-    background-color: transparent;
-    color: white;
-    border: 0.5px solid white;
+    background-color: var(--white);
+    color: var(--color-primary);
+    border: 0.5px solid var(--white);
 }
 /* ACABA MENU */
 #p_banner{
@@ -109,7 +109,7 @@ h3{
 
 #mountain-image{
     width: 90%;
-    background-color: #606060;
+    background-color: var(--desabled);
     background-image: url(../images/Ativo\ 9.png);
     background-repeat: no-repeat;
     height: 450px;
@@ -125,7 +125,7 @@ h3{
 }
 
 .gg-check{
-    color: #00DA87;
+    color: var(--green);
 }
 .div_footer_item{
     justify-content: space-between;

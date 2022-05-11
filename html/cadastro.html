@@ -37,39 +37,45 @@
     <!-- BODY -->
     <div class="container-lg container-start container-cadastro">
         <div class="flex-column">
-
             <p class="p-light">Comece de graça</p>
             <h2 id="title_cadastro">Criar uma conta.</h2>
             <p class="p-light">Já é um membro ? <a><span class="span_cadastro_login">faça login</span></a></p>
             <div class="flex-column">
                 <div class="flex-row">
                     <div class="div_form">
-                        <input type="text" class="input_form" placeholder="teste" id="input_nome" onkeyup="validaNome()" required>
-                        <label class="label_form" for="input_nome">Nome</label>
+                        <input type="text" class="input_form" placeholder="teste" id="input_nome" onkeyup="validaNome()"
+                            required>
+                        <label class="label_form" for="input_nome" id="label_nome">Nome</label>
                     </div>
                     <div class="div_form">
-                        <input type="text" class="input_form" placeholder="teste" id="input_sobrenome" onkeyup="validaNome()" required>
-                        <label class="label_form" for="input_sobrenome">Sobrenome</label>
+                        <input type="text" class="input_form" placeholder="teste" id="input_sobrenome"
+                        onkeyup="validaSobrenome()" required>
+                        <label class="label_form" for="input_sobrenome" id="label_sobrenome">Sobrenome</label>
                     </div>
                 </div>
                 <div class="div_form">
-                    <input type="text" class="input_form" placeholder="teste" id="input_dtNasc" onkeyup="validaNome()" required>
-                    <label class="label_form" for="input_dtNasc">Data de nascimento</label>
+                    <input type="text" class="input_form" placeholder="teste" id="input_dtNasc" onkeyup="validadtNasc()"
+                    maxlength="10" required>
+                    <label class="label_form" for="input_dtNasc" id="label_dtNasc">Data de nascimento</label>
                 </div>
                 <div class="div_form">
-                    <input type="password" class="input_form" placeholder="teste" id="input_email" onkeyup="validaNome()" required>
-                    <label class="label_form" for="input_email">Email</label>
+                    <input type="text" class="input_form" placeholder="teste" id="input_email" onkeyup="validaEmail()"
+                    required>
+                    <label class="label_form" for="input_email" id="label_email">Email</label>
                 </div>
                 <div class="div_form">
-                    <input type="password" class="input_form" placeholder="teste" id="input_senha" onkeyup="validaNome()" required>
-                    <label class="label_form" for="input_senha">Senha</label>
+                    <input type="password" class="input_form" placeholder="teste" id="input_senha"
+                    onkeyup="validaSenha()" required>
+                    <label class="label_form" for="input_senha" id="label_senha">Senha</label>
                 </div>
-
+                
                 <div class="div_form">
-                    <input type="text" class="input_form" placeholder="teste" id="input_confirmaSenha" onkeyup="validaNome()" required>
-                    <label class="label_form" for="input_confirmaSenha">Confirma senha:</label>
+                    <input type="password" class="input_form" placeholder="teste" id="input_confirma_senha"
+                    onkeyup="validaConfirmaSenha()" required>
+                    <label class="label_form" for="input_confirma_senha" id="label_confirma_senha">Confirma
+                        senha:</label>
+                    </div>
                 </div>
-            </div>
             <button class="button" id="button_login">Cadastrar</button>
         </div>
         <div></div>
@@ -101,20 +107,56 @@
 
 </html>
 <script>
-    function validaNome(){
-        console.log('teste');
+    function validaNome() {
         var nome = input_nome.value;
-        if(nome.length < 5){
-            input_nome.style.borderColor ="red";
-        }else{
-            input_nome.style.borderColor =``;
-
+        if (nome.length < 5 || nome.length == '') {
+            input_nome.style.borderColor = 'red';
+            label_nome.style.color = 'red';
+        } else {
+            input_nome.style.borderColor = ``;
+            label_nome.style.color = ``;
         }
     }
-    function validaSobrenome(){
+    function validaSobrenome() {
+        var sobrenome = input_sobrenome.value;
+        if (sobrenome.length < 5 || sobrenome.length == '') {
+            input_sobrenome.style.borderColor = 'red';
+            label_sobrenome.style.color = 'red';
+        } else {
+            input_sobrenome.style.borderColor = ``;
+            label_sobrenome.style.color = ``;
+        }
     }
-    function validaEmail(){}
-    function validadtNasc(){}
-    function validaSenha(){}
-    function validaConfirmaSenha(){}
+    function validaEmail() { }
+    function validadtNasc() {
+        var dtNasc = input_dtNasc.value;
+        if (dtNasc.length == 2) {
+            input_dtNasc.value += "/";
+        }
+        if (dtNasc.length == 5) {
+            input_dtNasc.value += "/";
+        }
+    }
+    function validaSenha() {
+        var senha = input_senha.value;
+        if (senha.length < 8) {
+            if (senha != '') { } else {
+                input_senha.style.borderColor = "red";
+                return true;
+            }
+        } else {
+            input_senha.style.borderColor = ``;
+        }
+    }
+
+    function validaConfirmaSenha() {
+        var validaSenha = input_confirma_senha.value;
+        if (validaSenha == input_senha.value) {
+            input_confirma_senha.style.borderColor = 'green';
+            label_confirma_senha.style.color = 'green';
+        } else {
+            input_confirma_senha.style.borderColor = 'red';
+            label_confirma_senha.style.color = 'red';
+        }
+    }
 </script>

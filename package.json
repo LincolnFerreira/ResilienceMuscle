@@ -1,0 +1,20 @@
+{
+  "name": "resiliencemuscle",
+  "version": "1.0.0",
+  "description": "Plataforma de gestão para usuarios de academia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LincolnFerreira/ResilienceMuscle.git"
+  },
+  "author": "Lincoln Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LincolnFerreira/ResilienceMuscle/issues"
+  },
+  "homepage": "https://github.com/LincolnFerreira/ResilienceMuscle#readme"
+}

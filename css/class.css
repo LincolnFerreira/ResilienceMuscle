@@ -1,11 +1,12 @@
+@import "colors.css";
 @font-face {
     font-family: Jura;
     src: url(../css/fonts/Jura-VariableFont_wght.ttf);
   
 }
 body{
-    background-color: #212121;
-    color: #fff;
+    background-color: var(--dark);
+    color: var(--white);
     font-family: Jura;
     overflow-x:hidden;
 
@@ -20,7 +21,7 @@ body{
     z-index: -1;
 }
 .div_banner_index{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #212121 100%), url(../images/background_index.png);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark) 100%), url(../images/background_index.png);
 
 
     background-size: cover;
@@ -77,14 +78,14 @@ body{
     padding-right: 34px;
     border: none;
     border-color: transparent;
-    background-color: #00DA87;
-    color: whitesmoke;
+    background-color: var(--green);
+    color: var(--var(--white));
 }
 .button-destaque {
     border: solid;
     border-color: transparent;
     background-color: #42257C;
-    color: whitesmoke;
+    color: var(--var(--white));
 
 }
 .font-title{
@@ -93,10 +94,10 @@ body{
 }
 .font-destaque{
     font-weight: bolder;
-    color: #5666F6;
+    color: var(--primary-light);
 }
 .p_desabled{
-    color: #7E7E7E;
+    color: var(--desabled);
 }
 .button-destaque:hover .gg-arrow-right{
     animation: animation-to-right .4s ease infinite alternate;
@@ -112,7 +113,7 @@ body{
 a{
 }
 .span_cadastro_login{
-    color: #5666F6;
+    color: var(--primary-light);
     cursor: pointer;
 
 }
@@ -141,24 +142,24 @@ a{
     border: 2px solid transparent;
     border-radius: 8px;
     background-color: #2E3746;
-    color: white;
+    color: var(--white);
     transition: all 0.5s ease-in-out;
 
 }
  .div_form .input_form:focus,
  .div_form .input_form:valid{
-    border-color: #5666F6;
+    border-color: var(--color-primary);
 }
 .input_form:focus ~ .label_form{
     transform: translateY(-19px);
     font-size:12px;
-    color: white;
+    color: var(--white);
     
 }
 .input_form:valid ~ .label_form{
     transform: translateY(-19px);
     font-size:12px;
-    color: white;
+    color: var(--white);
     
 }
 
@@ -194,16 +195,20 @@ a{
     justify-content: start;
 }
 .container-cadastro{
-    min-height: 800px;
+    align-items: center;
+    margin-left: 10%;
+}
+.container-login{
+    min-height: 500px;
     align-items: center;
     margin-left: 10%;
 }
 .span_esqueci_senha{
-    color: #5666F6;
+    color: var(--primary-light);
 }
 .span_esqueci_senha:hover{
     align-self: flex-end;
     cursor: pointer;
     text-decoration-line: underline;
-    color: #5666F6;
+    color: var(--primary-light);
 }
