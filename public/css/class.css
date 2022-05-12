@@ -1,0 +1,214 @@
+@import "colors.css";
+@font-face {
+    font-family: Jura;
+    src: url(../css/fonts/Jura-VariableFont_wght.ttf);
+  
+}
+body{
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: Jura;
+    overflow-x:hidden;
+
+}
+.div_banner_cadastro{
+    background-image: url(../images/background-cadastro.png);
+
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.div_banner_index{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark) 100%), url(../images/background_index.png);
+
+
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.container-lg{
+    display: flex;
+    width: 100%;
+    min-height: 300px auto;
+    justify-content: center;
+    margin: 0;
+    padding: 20px 50px 20px 50px;
+}
+
+.container-column{
+    flex-direction: column;
+    align-items: center;
+}
+.container-md{
+    width: 50%;
+    display: flex;
+    margin: 10px;
+}
+.button{
+    border-radius: 4px;
+    padding: 10px 15px 10px 15px;
+    margin: 10px 10px 10px 10px;
+    font-weight:500;
+    align-items: center;
+    border: none;
+
+}
+.button:hover{
+    -webkit-box-shadow: 0px 7px 19px -3px #000000; 
+    box-shadow: 0px 7px 19px -3px #000000;
+    -webkit-transition-duration: 0.3s;
+}
+.button-border{
+    border-radius: 24px;
+    padding-left: 34px;
+    padding-right: 34px;
+    border: none;
+    border-color: transparent;
+    background-color: var(--green);
+    color: var(--white);
+}
+.button-destaque {
+    border: solid;
+    border-color: transparent;
+    background-color: #42257C;
+    color: var(--white);
+
+}
+.font-title{
+    font-size: 30px;
+    text-align: center;
+}
+.font-destaque{
+    font-weight: bolder;
+    color: var(--primary-light);
+}
+.p_desabled{
+    color: var(--desabled);
+}
+.button-destaque:hover .gg-arrow-right{
+    animation: animation-to-right .4s ease infinite alternate;
+}
+@keyframes animation-to-right {
+    from{
+        transform: translateX(0);
+    }    
+    to{
+        transform: translateX(4px);
+    }    
+}
+a{
+}
+.span_cadastro_login{
+    color: var(--primary-light);
+    cursor: pointer;
+
+}
+.div_form{
+    position: relative;
+    margin: 15px 0;
+    margin-left: 15px;
+
+}
+.input_form::placeholder{
+    color: transparent;
+}
+.label_form{
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    color: #BBB9B9;
+    cursor: text;
+    transition: all 0.5s ease-in-out;
+
+}
+.input_form{
+    width: 100%;
+    padding: 20px 5px 5px 5px;
+    border: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: #2E3746;
+    color: var(--white);
+    transition: all 0.5s ease-in-out;
+
+}
+ .div_form .input_form:focus,
+ .div_form .input_form:valid{
+    border-color: var(--color-primary);
+}
+.input_form:focus ~ .label_form{
+    transform: translateY(-19px);
+    font-size:12px;
+    color: var(--white);
+    
+}
+.input_form:valid ~ .label_form{
+    transform: translateY(-19px);
+    font-size:12px;
+    color: var(--white);
+    
+}
+
+
+.fa{
+    margin: 10px!important;
+    cursor: pointer;
+}
+.fa-facebook-square:hover{
+    color: #4267B2;
+}
+.fa-twitter-square:hover{
+    color: #1DA1F2;
+}
+.fa-linkedin:hover{
+    color: #0072b1;
+}
+.fa-instagram:hover{
+    color: #cc2366;
+}
+.icones{
+    justify-content: center;
+}
+.p-light{
+    font-weight: lighter;
+    font-size: 16px;
+}
+#title_cadastro{
+    font-size: 40px;
+}
+
+.container-start{
+    justify-content: start;
+}
+.container-cadastro{
+    align-items: center;
+    margin-left: 10%;
+}
+.container-login{
+    min-height: 500px;
+    align-items: center;
+    margin-left: 10%;
+}
+.span_esqueci_senha{
+    color: var(--primary-light);
+}
+.span_esqueci_senha:hover{
+    align-self: flex-end;
+    cursor: pointer;
+    text-decoration-line: underline;
+    color: var(--primary-light);
+}
