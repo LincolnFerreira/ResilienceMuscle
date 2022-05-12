@@ -7,10 +7,14 @@ const conectar = async () =>{
 
     const mysql = require('mysql2/promise');
     const conn = await mysql.createConnection({
-        host: "localhost",
+   /*     host: "localhost",
         user: "root",
         password: "admin123@",
-        database: 'resilienceMuscle'
+        database: 'resilienceMuscle' */
+        host:'localhost',
+        user:'aluno',
+        password:'sptech',
+        database:'resilienceMuscle'
     });
     console.log('Conectou ao banco com sucesso!!!');
     global.conexao=conn;
@@ -25,7 +29,7 @@ const exibeUsuarios = async() =>{
 async function insereUsuario(usuario){
     const conn = await conectar();
     const sql = 'INSERT INTO usuario(nome, sobrenome, dtNasc, email, senha) VALUES (?,?,?,?,?);';
-    const values = [usuario.nome,  usuario.sobrenome, usuario.dtNasc, usuario.email, usuario.senha];
+    const values = [usuario.nomeApp,  usuario.sobrenomeApp, usuario.dtNascApp, usuario.emailApp, usuario.senhaApp];
     await conn.query(sql,values);
     console.log('inseriu com sucesso!');
 } 

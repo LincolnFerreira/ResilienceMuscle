@@ -20,15 +20,15 @@
         }
     }
     function validaEmail() { }
-    function validadtNasc() {
-        var dtNasc = input_dtNasc.value;
-        if (dtNasc.length == 2) {
-            input_dtNasc.value += "/";
-        }
-        if (dtNasc.length == 5) {
-            input_dtNasc.value += "/";
-        }
-    }
+    // function validadtNasc() {
+    //     var dtNasc = input_dtNasc.value;
+    //     if (dtNasc.length == 2) {
+    //         input_dtNasc.value += "/";
+    //     }
+    //     if (dtNasc.length == 5) {
+    //         input_dtNasc.value += "/";
+    //     }
+    // }
     function validaSenha() {
         var senha = input_senha.value;
         if (senha.length < 8) {
