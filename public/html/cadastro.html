@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="div_form">
-                    <input type="text" class="input_form" placeholder="teste" id="input_dtNasc" onkeyup="validadtNasc()"
+                    <input type="text" class="input_form" placeholder="teste" id="input_dtNasc" onkeyup=""
                     maxlength="10" required>
                     <label class="label_form" for="input_dtNasc" id="label_dtNasc">Data de nascimento</label>
                 </div>
@@ -110,11 +110,11 @@
 <script>
 
 async function cadastrar(){
-    var nome  = input_nome.value;
-    var sobrenome = input_sobrenome.value;
-    var dtNasc = input_dtNasc.value;
-    var email = input_email.value;
-    var senha = input_senha.value;
+    const nome  = document.getElementById("input_nome");
+    const sobrenome = input_sobrenome.value;
+    const dtNasc = input_dtNasc.value;
+    const email = input_email.value;
+    const senha = input_senha.value;
 
     let req = await fetch("/cadastro",{
         method: "POST",

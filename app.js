@@ -5,7 +5,7 @@ const cors = require('cors');
 const {insereUsuario} = require('./public/database/db');
 const app = express();
 const porta = 4000;
-
+    //é uma middleware que transforma tudo que chegar nas solicitações JSON ele transforma em dados analisados em arquivos req.body
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
@@ -19,7 +19,7 @@ app.get('/index.html', (req,res) =>{
 app.get('/login.html', (req,res) =>{
     res.sendFile(path.join(__dirname, './public/html/login.html'));
 })
-app.get('/cadastro', (req,res) =>{
+app.get('/cadastro.html', (req,res) =>{
     res.sendFile(path.join(__dirname, './public/html/cadastro.html'));
 })
 app.post('/cadastro', async  (req, res) =>{
@@ -29,6 +29,12 @@ app.post('/cadastro', async  (req, res) =>{
     
 })
 
-app.listen(porta, ()=>{
-    console.log(`SERVIDOR RODANDO NA PORTA ${porta}`)
-})
+
+app.post('/login', async  (req, res) =>{
+    
+    console.log(req.body)
+    await autenticacao(req.body)
+    })
+    app.listen(porta, ()=>{
+        console.log(`SERVIDOR RODANDO NA PORTA ${porta}`)
+    })
