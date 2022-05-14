@@ -51,14 +51,7 @@ async function cadastrar(req, res) {
     }
 }
 
-async function insereUsuario(){
-    const conn = await conectar();
-    const sql = 'INSERT INTO usuario(nome, sobrenome, dtNasc, email, senha) VALUES (?,?,?,?,?);';
-    const values = [nomeApp,  sobrenomeApp, dtNascApp, emailApp, senhaApp];
-    await conn.query(sql,values);
-    console.log('inserido com sucesso!');
-    console.log(values);
-} 
+
 
 //exportar todas as funções utilizadas! 
 
