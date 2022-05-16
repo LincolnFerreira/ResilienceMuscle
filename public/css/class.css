@@ -21,13 +21,13 @@ body{
     z-index: -1;
 }
 .div_banner_index{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark) 100%), url(../images/background_index.png);
-
-
-    background-size: cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark) 100%), url(../images/teste2-ConversImagem.jpg);
+    background-repeat: no-repeat;
     position: absolute;
-    height: 100%;
+    background-size:cover;
+    bottom: 20%;
     width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
@@ -89,7 +89,7 @@ body{
 
 }
 .font-title{
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
 }
 .font-destaque{
@@ -110,8 +110,7 @@ body{
         transform: translateX(4px);
     }    
 }
-a{
-}
+
 .span_cadastro_login{
     color: var(--primary-light);
     cursor: pointer;

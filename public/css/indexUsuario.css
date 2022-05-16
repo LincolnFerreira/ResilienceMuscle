@@ -1,0 +1,19 @@
+@import "colors.css";
+body{
+    background-color: var(--white);
+}
+.flex-row{
+    justify-content: space-between;
+    background-color: var(--white);
+}
+.container-menu{
+    width: 17%;
+    height: 100vh;
+    background-color: var(--dark);
+    border-radius: 0px 15px 15px 0px;
+}
+.container-body{
+    width: 83%;
+    background-color:var(--white);
+
+}

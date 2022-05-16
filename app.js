@@ -1,40 +1,33 @@
-const express = require('express');
-// é necessario o path para chamar os caminhos das pastas ... ex: ./html/index.html
-const path = require('path');
-const cors = require('cors');
-const {insereUsuario} = require('./public/database/db');
-const app = express();
-const porta = 4000;
-    //é uma middleware que transforma tudo que chegar nas solicitações JSON ele transforma em dados analisados em arquivos req.body
+process.env.AMBIENTE_PROCESSO = "desenvolvimento";
+// process.env.AMBIENTE_PROCESSO = "producao";
+
+var express = require("express");
+var cors = require("cors");
+var path = require("path");
+var PORTA = 4000;
+
+var app = express();
+
+var indexRouter = require("./src/routes/index");
+var usuarioRouter = require("./src/routes/usuarios");
+var avisosRouter = require("./src/routes/avisos");
+var medidasRouter = require("./src/routes/medidas");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use(cors());
-app.use(express.static(__dirname + '/public'));
-app.get('/', (req,res) =>{
-    res.sendFile(path.join(__dirname, './public/html/index.html'));
-})
-app.get('/index.html', (req,res) =>{
-    res.sendFile(path.join(__dirname, './public/html/index.html'));
-})
-app.get('/login.html', (req,res) =>{
-    res.sendFile(path.join(__dirname, './public/html/login.html'));
-})
-app.get('/cadastro.html', (req,res) =>{
-    res.sendFile(path.join(__dirname, './public/html/cadastro.html'));
-})
-app.post('/cadastro', async  (req, res) =>{
-    
-    console.log(req.body)
-    await insereUsuario(req.body)
-    
-})
 
+app.use("/", indexRouter);
+app.use("/usuarios", usuarioRouter);
+app.use("/avisos", avisosRouter);
+app.use("/medidas", medidasRouter)
 
-app.post('/login', async  (req, res) =>{
-    
-    console.log(req.body)
-    await autenticacao(req.body)
-    })
-    app.listen(porta, ()=>{
-        console.log(`SERVIDOR RODANDO NA PORTA ${porta}`)
-    })
+app.listen(PORTA, function () {
+    console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n
+    Você está rodando sua aplicação em Ambiente de ${process.env.AMBIENTE_PROCESSO} \n
+    \t\tSe "desenvolvimento", você está se conectando ao banco LOCAL (MySQL Workbench). \n
+    \t\tSe "producao", você está se conectando ao banco REMOTO (SQL Server em nuvem Azure) \n
+    \t\t\t\tPara alterar o ambiente, comente ou descomente as linhas 1 ou 2 no arquivo 'app.js'`);
+});
