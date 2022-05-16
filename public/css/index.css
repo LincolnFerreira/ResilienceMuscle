@@ -16,6 +16,10 @@
     align-items: center;
     
 }
+#div_aguardar{
+    align-self: center;
+    display: none;
+}
 #nav-bar ul li{
     margin: 30px 30px 30px 30px ;
     padding: 5px 10px 5px 10px ;
@@ -170,4 +174,9 @@ h3{
 
 .box h4{
     color: var(--green);
+}
+
+#mensagem_erro{
+    display: flex;
+    justify-content: center;
 }

@@ -1,10 +1,17 @@
 @import "colors.css";
 body{
     background-color: var(--white);
+    color: var(--dark);
 }
 .flex-row{
     justify-content: space-between;
     background-color: var(--white);
+    color: var(--dark);
+
+}
+.container-analises{
+    width: 80%;
+    align-items: center;
 }
 .container-menu{
     width: 17%;
@@ -15,5 +22,20 @@ body{
 .container-body{
     width: 83%;
     background-color:var(--white);
+    align-items: center;
+}
+.container-box{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: space-evenly;
 
+}
+.box-dados{
+    text-align: center;
+    justify-content: space-around;
+    height:80%;
+    width: 100%;
+    margin: 10px;
+    background-color: grey;
 }

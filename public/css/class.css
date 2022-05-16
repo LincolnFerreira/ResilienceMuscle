@@ -112,9 +112,13 @@ body{
 }
 
 .span_cadastro_login{
-    color: var(--primary-light);
+    color: var(--color-primary-light);
     cursor: pointer;
 
+}
+.span_cadastro_login:hover{
+    color: var(--color-primary-light);
+    text-overflow: clip;
 }
 .div_form{
     position: relative;

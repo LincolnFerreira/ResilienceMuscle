@@ -11,4 +11,6 @@ CREATE TABLE usuario (
     senha varchar(30)
 );
 
+select * from usuario;
+-- truncate table usuario;
 -- drop database projetoindividual;
