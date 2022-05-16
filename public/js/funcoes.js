@@ -55,3 +55,12 @@ function fecharModal() {
     divModal.style.display = "none";
 }
 
+function pressEnter(){
+    addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+
+            document.getElementById("botao_loga").click();
+        }
+    })
+}

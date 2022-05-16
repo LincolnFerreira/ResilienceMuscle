@@ -52,7 +52,7 @@
                         <label class="label_form" for="input_email">Email:</label>
                     </div>
                     <div class="div_form">
-                        <input type="password" class="input_form" placeholder="teste" id="input_senha"
+                        <input type="password" class="input_form" placeholder="teste" onkeyup="pressEnter()" id="input_senha"
                              required>
                         <label class="label_form" for="input_senha">Senha:</label>
                     </div>
@@ -60,7 +60,7 @@
                 <p class="p-light"><a><span class="span_esqueci_senha">Esqueci minha senha</span></a></p>
 
             </div>
-            <button class="button" id="button_login" onclick="entrar()">Entrar</button>
+            <button class="button" id="botao_loga" onclick="entrar()">Entrar</button>
         </div>
         <div id="div_aguardar" class="loading-div">
             <img src="./assets/ball2.svg" id="loading-gif">
