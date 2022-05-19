@@ -35,6 +35,12 @@ body{
     display: flex;
     flex-direction: column;
 }
+hr{
+	border-width:0;
+	background: var(--desabled)  center no-repeat;
+    width: 80%;
+    height: 0.20px;
+}
 
 .flex-row{
     display: flex;

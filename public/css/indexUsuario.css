@@ -17,13 +17,65 @@ body{
     width: 17%;
     height: 100vh;
     background-color: var(--dark);
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 0px 7px 7px 0px;
+    justify-content: space-around;
+    align-items: center;
+}
+#menu-top{
+    width: 100%;
+    height: 20%;
+}
+#menu-mid{
+    width: 100%;
+    height: 70%;
+    align-items: flex-start;
+    color: var(--white);
+}
+#body-user{
+    box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#menu-bottom{
+    width: 100%;
+    height: 10%;
+    justify-content: space-between;
+    padding: 0px 15px 0px 15px;
+}
+#bem-vindo{
+    align-self:flex-start;
+    margin-left: -20px;
+}
+ul{
+  justify-content: space-around;  
+  height: 40%;
+}
+ul li{
+    cursor: pointer;
+}
+
+.img_pointer{
+    cursor: pointer;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-grey);
+}
+.menu_user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu{
+    align-items: center;
 }
 .container-body{
     width: 83%;
     background-color:var(--white);
     align-items: center;
 }
+
+
 .container-box{
     width: 100%;
     height: 250px;
@@ -41,7 +93,43 @@ body{
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.55) 1.95px 1.95px 2.6px;
 }
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#p_duvida_treinou{
+    color: var(--white);
+    font-weight: bold;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    background-color: var(--desabled);
+    width: 100%;
+    
+    border-radius: 8px 8px 0px 0px;
 
+}
+#p_duvida_treinou p{
+    margin-top: 10px;
+}
+.pointer{
+    cursor: pointer;
+}
+#h3_foi_treinar{
+    background-color: var(--green);
+    height: 100%;
+}
+#h3_foi_treinar:hover{
+    color: var(--white);
+}
+#h3_nao_treinou{
+    background-color: var(--color-error);
+    height: 100%;
+}
+#h3_nao_treinou:hover{
+    color: var(--white);
+}
 .p_box_kpi{
     font-weight: bold;
     color: var(--color-check);

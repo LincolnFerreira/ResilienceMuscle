@@ -1,0 +1,33 @@
+.cls-1 {
+    fill: #b3b4b4;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3px;
+    fill: #08abab;
+}
+.perna:hover{
+    cursor: pointer;
+    /* fill: yellow; */
+}
+.perna{
+    fill:aquamarine;
+}
+.reto-abdominal{
+    fill: red;
+}
+.obliquo{
+    fill: cadetblue;
+}
+.braco{
+    fill: chartreuse;
+}
+.peitombro{
+    fill: violet;
+}
+.trapezio{
+    fill: rgb(52, 52, 133);
+}
+.desabled{
+    fill: var(--desabled);
+}
