@@ -37,5 +37,21 @@ body{
     height:80%;
     width: 100%;
     margin: 10px;
-    background-color: grey;
+    background-color: var(--white-dash);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.55) 1.95px 1.95px 2.6px;
+}
+
+.p_box_kpi{
+    font-weight: bold;
+    color: var(--color-check);
+}
+.h1_box_number{
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-grey);
+}
+.p_box_porcentagem{
+    font-weight: bold;
+    color: var(--color-error);
 }
