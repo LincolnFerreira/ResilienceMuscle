@@ -1,34 +1,54 @@
 @import "colors.css";
-.modal{
+.modalatual{
+    justify-content: center;
+    align-items: center;
     display: none;
     position: fixed;
     z-index: 1;
-    padding-top: 100px; /* localização da caixa*/
+    padding-top: 50px; /* localização da caixa*/
     left: 0;
     top: 0; /*não vai deixar nada impedir que esta box fique no TOPO da pagina*/
     width: 100%;
-    height: 80%;
+    height: 100%;
     overflow: auto;
-    background: rgb(0,0,0); 
     background: rgb(0,0,0,0.4); 
 }
-.modal-content{
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+.modalatual .modal-content {
+    
+    background-color: var(--desabled);
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .close{
-    color: #aaaaaa;
+    color: white;
     float:right;
     font-size: 28px;
     font-weight: bold;
 }
 
 .close:hover, close:focus{
-    color: #000;
+    color: white;
     text-decoration: none;
     cursor: pointer;
+}
+.color{
+    background-color: var(--desabled);
+}
+
+.form{
+    width: 50%;
+}
+.body-modal{
+    width: 80%;
+    align-items: center;
+}
+option{
+    padding: 10px;
+}
+.form_label{
+    color: var(--white);
 }

@@ -7,35 +7,82 @@
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/indexUsuario.css">
     <link rel="stylesheet" href="./css/class.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="./css/indexUsuario.css">
     <link rel="stylesheet" href="./css/corpo.css">
     <link rel="stylesheet" href="./css/modal.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <link href='https://css.gg/css' rel='stylesheet'>
     <link href='https://css.gg/css' rel='stylesheet'>
     <title>Inicio</title>
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
-        rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <script src="./js/funcoes.js"></script>
 
 </head>
 
 <body>
-    <div id="div_modal" class="modal">
+    <div id="div_modal" class="modalatual">
+        <!-- MODAL -->
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Algum texto....</p>
+            <span class="close">x</span>
+            <div class="flex-column body-modal">
+                    <div class="flex-row transparent">
+                        <div class="div_form">
+                            <select class="input_form" placeholder="musculo" id="select_musculo" required>
+                                <option value="costas">costas</option>
+                                <option value="bíceps">bíceps</option>
+                                <option value="trapezio">trapezio</option>
+                                <option value="ombro">ombro</option>
+                                <option value="tríceps">tríceps</option>
+                                <option value="antebraço">antebraço</option>
+                                <option value="abdomen">abdomen</option>
+                                <option value="obliquo">obliquo</option>
+                                <option value="quadriceps">quadriceps</option>
+                                <option value="posterior de coxa">posterior de coxa</option>
+                                <option value="panturrilha">panturrilha</option>
+                                <option value="gluteo">gluteo</option>
+                                <option value="coluna">coluna</option>
+                            </select>
+                        </div>
+                        <div class="div_form">
+                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_exercicio"
+                                 required>
+                            <label class="label_form" for="input_exercicio">Exercicio:</label>
+                        </div>
+                        <div class="div_form">
+                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_qtd_repeticoes_penultima_serie"
+                                 required>
+                            <label class="label_form" for="input_qtd_repeticoes_penultima_serie">Quantidade de repetições da penultima série:</label>
+                        </div>
+                        <div class="div_form">
+                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_penultima_serie"
+                                 required>
+                            <label class="label_form" for="input_peso_penultima_serie">Peso da penultima série</label>
+                        </div>
+                        <div class="div_form">
+                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_qtd_repeticoes_ultima_serie"
+                                 required>
+                            <label class="label_form" for="input_qtd_repeticoes_ultima_serie">Quantidade de repetições da ultima série:</label>
+                        </div>
+                        <div class="div_form">
+                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_ultima_serie"
+                                 required>
+                            <label class="label_form" for="input_peso_ultima_serie">Peso da ultima série</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="div_select_frequencia"></div>
+
+            </div>
         </div>
     </div>
-    <button id="botao">ABRIR MODAL</button>
     <div class="flex-row">
 
         <!-- MENU LATERAL -->
         <div class="container-menu flex-column ">
-            
+
             <div id="menu-top" class="menu_user">
                 <img src="./images/texto-logo.png" width="250px">
             </div>
@@ -54,7 +101,7 @@
             </div>
         </div>
 
-          
+
         <!-- FINAL DO MENU LATERAL -->
         <!-- CORPO DA PAGINA -->
         <div class="container-body flex-column">
@@ -94,6 +141,60 @@
                     </div>
 
                 </div>
+            </div>
+            <div class="flex-column desempenho">
+                <button class="button-destaque" onclick="adicionarTreino()">Adicionar <i class="gg-add-r"></i></button>
+                <table id="table_desempenho">
+                    <tr class="table-title">
+                        <th>Data</th>
+                        <th>Musculo</th>
+                        <th>Exercicio</th>
+                        <th>Peso</th>
+                        <th>Repetição</th>
+                    </tr>
+                    <tr>
+                        <td id="td-desempenho-data">22/05/2022</td>
+                        <td id="td-desempenho-musculo">Costas</td>
+                        <td id="td-desempenho-exercicio">Terra</td>
+                        <td id="td-desempenho-peso">25</td>
+                        <td id="td-desempenho-repeticoes">12</td>
+                    </tr>
+                    <tr>
+                        <td>22/05/2022</td>
+                        <td>Costas</td>
+                        <td>Terra</td>
+                        <td>25</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>22/05/2022</td>
+                        <td>Costas</td>
+                        <td>Terra</td>
+                        <td>25</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>22/05/2022</td>
+                        <td>Costas</td>
+                        <td>Terra</td>
+                        <td>25</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>22/05/2022</td>
+                        <td>Costas</td>
+                        <td>Terra</td>
+                        <td>25</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>22/05/2022</td>
+                        <td>Costas</td>
+                        <td>Terra</td>
+                        <td>25</td>
+                        <td>12</td>
+                    </tr>
+                </table>
             </div>
             <div id="body-user" class="flex-column">
                 <div id="container-sistema-muscular">
@@ -557,7 +658,9 @@
                         </g>
                     </svg>
                 </div>
+
             </div>
+
             <div class="chart-container" style="position: relative; height:10vh; width:40vw">
                 <canvas id="myChart"></canvas>
             </div>
@@ -574,51 +677,70 @@
 </script>
 <script>
     const labels = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
     ];
-  
+
     const data = {
-      labels: labels,
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45],
-      }]
+        labels: labels,
+        datasets: [{
+            label: 'My First dataset',
+            label: 'My First dataset2',
+            label: 'My First dataset',
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
     };
-  
+
     const config = {
-      type: 'line',
-      data: data,
-      options: {}
+        type: 'line',
+        data: data,
+        options: {}
     };
-  </script>
-  <script>
+</script>
+<script>
     const myChart = new Chart(
-      document.getElementById('myChart'),
-      config
+        document.getElementById('myChart'),
+        config
     );
-  </script>
+</script>
 
-  <script>
-      var modal = document.getElementById("div_modal");
-      var botao = document.getElementById("botao");
-      var span = document.getElementsByClassName("close")[0];
+<script>
+    var modal = document.getElementById("div_modal");
+    var botao = document.getElementById("botao");
+    var span = document.getElementsByClassName("close")[0];
 
-      botao.onclick = function(){
-          modal.style.display ="block";
-      }
-      span.onclick = function() {
-          modal.style.display = "none";
-      }
-      window.onclick = function(event){
-          if (event.target == modal){
-                  modal.style.display = "none";
-          }
-      }
-  </script>
+    function adicionarTreino() {
+        modal.style.display = "flex";
+    }
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    function escolheFrequencia() {
+        var qtdFrequencia = Number(select_frequencia.value);
+        div_select_frequencia.innerHTML = null;
+        
+    }
+
+    function escolheMusculo() {
+        var musculoTreinado = Number()
+    }
+
+    function desempenho() {
+
+    }
+</script>
