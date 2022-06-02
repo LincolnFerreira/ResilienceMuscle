@@ -17,39 +17,82 @@
 </head>
 
 <body>
+    <div id="divteste"></div>
     <div id="calendario">
-        <table>
-            <tr>
-                <th>Seg</th>
-                <th>Ter</th>
-                <th>Qua</th>
-                <th>Qui</th>
-                <th>Sex</th>
-                <th>Sab</th>
-                <th>Dom</th>
-            </tr>
-        </table>
-</div>
+
+    </div>
 </body>
 
 </html>
 <script>
-    function qtdDiaMes() {
-        var data = new Date();
-        ano = data.getFullYear();
-        mes = data.getMonth()+1;
-           return new Date(ano, mes, 0).getDate().toLocaleString('pt-BR');    
-        };
-        diasMes = []; // está guardando as datas
-        
-        diaNome = ['Seg','Ter','Qua','Qui','Sex','Sab','Dom']; // guardando os nomes dos dias
-    var maxDia = qtdDiaMes();        
-    for(var i = 1; i <= maxDia; i++){
-        diasMes.push(i);
-        if(i % 7 == 0){
+    var data = new Date();
+    ano = data.getFullYear();
+    mes = data.getMonth() + 1;
+    var maxDia = qtdDiaMes();
 
+    function qtdDiaMes() {
+        return new Date(ano, mes, 0).getDate().toLocaleString('pt-BR');
+    };
+    diaNome = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab']; // guardando os nomes dos dias
+
+    MesComecaDia = data.getDay();
+    let table = document.createElement('table');
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+    let row = document.createElement('tr');
+
+
+    thead.setAttribute("id", "cabecalho");
+    tbody.setAttribute("id", "corpoTable");
+
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    document.getElementById('calendario').appendChild(table);
+
+    function criaSemanaTable() {
+        for (var i = 0; i < diaNome.length; i++) {
+            let head = document.createElement('th');
+
+            head.setAttribute("id", `${diaNome[i]}`);
+            head.textContent = diaNome[i];
+            document.getElementById("cabecalho").appendChild(head);
         }
-             a.innerHTML +=diasMes[i -1];
-            
     }
+
+    
+    function populaSemana() {
+        var total = 0;
+        var dia = 1;
+        for (var i = 0; i < 4; i++) {
+            let data = document.createElement('tr');
+            data.setAttribute("id", `${total}semana`);
+            document.getElementById("corpoTable").appendChild(data);
+            total++;
+            for (i = 0; i < 7; i++) {
+                var plotaDia = `${total}semana`;
+                let dia = document.createElement('td');
+                dia.setAttribute("id", `${i}`);
+                dia.textContent =i;
+                document.getElementById(total+"semana").appendChild(dia);
+                console.log(total+"semana")
+            }
+        }
+    }
+    var teste = ['01', '02', '03', '04', '05', '06', '07',
+        '08', '09', '10', '11', '12', '13', '14',
+        '15', '16', '17', '18', '19', '20', '21',
+        '22', '23', '24', '25', '26', '27', '28',
+        '29', '30', '31'
+    ]
+    for (var i = 0; i < teste.length; i++) {
+        if (i % 7 == 0) {
+            divteste.innerHTML += `<br>`;
+        }
+        divteste.innerHTML += teste[i]
+    }
+
+    console.log(maxDia);
+    criaSemanaTable();
+    populaSemana();
 </script>
