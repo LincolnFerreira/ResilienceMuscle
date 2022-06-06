@@ -25,15 +25,15 @@
     <div class="flex-row" id="nav-bar">
         <a href="./index.html"><img src="../images/Ativo 5.png" width="200px" id="logo" /></a>
         <ul class="flex-row">
-            <li href="./index.html">Inicio</li>
-            <li href="./comofunciona.html">Como Funciona ?</li>
-            <li href="./projetos.html">Projetos</li>
-            <li href="./contato.html">Contato</li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./comofunciona.html">Como Surgiu ?</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
         </ul>
         <div id="div_button">
-            <a href="./cadastro.html"><button class="button" id="button_cadastro"
-                    href="./cadastro.html">Cadastrar-se</button></a>
-            <a href="./login.html"> <button class="button" id="button_login">Entrar</button></a>
+            <a href="./cadastro.html">
+                <button class="button" id="button_cadastro" href="./cadastro.html">Cadastrar-se</button></a>
+            <a href="./login.html">
+                <button class="button" id="button_login">Entrar</button></a>
         </div>
     </div>
 
@@ -47,13 +47,12 @@
             <div class="flex-column " id="body-modal">
                 <div class="flex-row">
                     <div class="div_form">
-                        <input type="text" class="input_form" placeholder="teste" id="input_email"
-                             required>
+                        <input type="text" class="input_form" placeholder="teste" id="input_email" required>
                         <label class="label_form" for="input_email">Email:</label>
                     </div>
                     <div class="div_form">
-                        <input type="password" class="input_form" placeholder="teste" onkeyup="pressEnter()" id="input_senha"
-                             required>
+                        <input type="password" class="input_form" placeholder="teste" onkeyup="pressEnter()"
+                            id="input_senha" required>
                         <label class="label_form" for="input_senha">Senha:</label>
                     </div>
                 </div>
@@ -94,9 +93,7 @@
 
 </html>
 <script>
-   
-
-   function entrar() {
+    function entrar() {
         aguardar();
 
         var emailVar = input_email.value;
@@ -107,8 +104,7 @@
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
             return false;
-        }
-        else {
+        } else {
             setInterval(sumirMensagem, 5000)
         }
 
@@ -162,7 +158,6 @@
     }
 
     function sumirMensagem() {
-       // cardErro.style.display = "none"
+        // cardErro.style.display = "none"
     }
-
 </script>

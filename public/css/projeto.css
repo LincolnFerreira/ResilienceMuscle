@@ -1,0 +1,45 @@
+.boxes {
+    justify-content: space-evenly;
+}
+
+.card-box {
+    width: 313px;
+    height: 338px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px;
+    justify-content: center;
+    color: var(--desabled);
+    font-weight: bold;
+
+}
+
+#muzy-box {
+    background-image: url(../images/muzy-box.png);
+}
+
+#nutricao-box {
+    background-image: url(../images/nutricao-box.png);
+}
+
+#evolution-box {
+    background-image: url(../images/evolucao-box.png);
+}
+
+.card-box:hover {
+    color: var(--white-dash);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+#muzy-box:hover {
+    background-image: url(../images/muzy-box-original.png);
+}
+
+#nutricao-box:hover {
+    background-image: url(../images/nutricao-box-original.png);
+}
+
+#evolution-box:hover {
+    background-image: url(../images/evolucao-box-original.png);
+}

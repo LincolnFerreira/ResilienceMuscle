@@ -24,15 +24,15 @@
     <div class="flex-row" id="nav-bar">
         <a href="./index.html"><img src="../images/Ativo 5.png" width="200px" id="logo" /></a>
         <ul class="flex-row">
-            <li href="./index.html">Inicio</li>
-            <li href="./comofunciona.html">Como Funciona ?</li>
-            <li href="./projetos.html">Projetos</li>
-            <li href="./contato.html">Contato</li>
+            <li><a href="./index.html">Inicio</a></li>
+            <li><a href="./comofunciona.html">Como Surgiu ?</a></li>
+            <li><a href="./projetos.html">Projetos</a></li>
         </ul>
         <div id="div_button">
-            <a href="./cadastro.html"><button class="button" id="button_cadastro"
-                    href="./cadastro.html">Cadastrar-se</button></a>
-            <a href="./login.html"> <button class="button" id="button_login">Entrar</button></a>
+            <a href="./cadastro.html">
+                <button class="button" id="button_cadastro" href="./cadastro.html">Cadastrar-se</button></a>
+            <a href="./login.html">
+                <button class="button" id="button_login">Entrar</button></a>
         </div>
     </div>
 
@@ -78,7 +78,7 @@
                         senha:</label>
                 </div>
             </div>
-                <button class="button" id="button_cadastro" onclick="cadastrar()">Cadastrar</button>
+            <button class="button" id="button_cadastro" onclick="cadastrar()">Cadastrar</button>
             <div id="div_aguardar" class="loading-div">
                 <img style=" width: 100px;" src="./assets/preloading.svg" id="loading_gif">
             </div>
@@ -124,13 +124,13 @@
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
-        if (nomeVar == "" || sobrenomeVar == "" || dtNascVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || sobrenomeVar == "" || dtNascVar == "" || emailVar == "" || senhaVar == "" ||
+            confirmacaoSenhaVar == "") {
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
             finalizarAguardar();
             return false;
-        }
-        else {
+        } else {
             setInterval(sumirMensagem, 5000)
         }
 
@@ -157,7 +157,8 @@
             if (resposta.ok) {
 
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                mensagem_erro.innerHTML =
+                "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
                 mensagem_erro.style.color = "green";
                 setTimeout(() => {
                     window.location = "login.html";
@@ -179,6 +180,4 @@
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
-
-
 </script>

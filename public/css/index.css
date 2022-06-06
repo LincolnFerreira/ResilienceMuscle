@@ -1,66 +1,68 @@
 @import "colors.css";
 /* imagem banner index*/
-#background-index{
 
-}
 /*  Menu  */
-#nav-bar{
+#nav-bar {
     align-items: center;
     justify-content: space-around;
     font-weight: 800;
-    
 }
-#nav-bar ul{
+
+#nav-bar ul {
     color: var(--white);
     justify-content: space-around;
     align-items: center;
-    
 }
-#div_aguardar{
+
+#div_aguardar {
     align-self: center;
     display: none;
 }
-#nav-bar ul li{
-    margin: 30px 30px 30px 30px ;
-    padding: 5px 10px 5px 10px ;
+
+#nav-bar ul li {
+    margin: 30px 30px 30px 30px;
+    padding: 5px 10px 5px 10px;
     cursor: pointer;
     border-radius: 4px;
-    border:0.5px solid;
+    border: 0.5px solid;
     border-color: transparent;
-
 }
-#nav-bar ul li:hover{
-    border:0.5px solid var(--green);
+
+#nav-bar ul li:hover {
+    border: 0.5px solid var(--green);
     transition: all 0.5s ease-in-out;
-
-
 }
-.fa-xl{
+
+.fa-xl {
     font-size: 1.7em !important;
     margin: 0px 0px 0px 0px;
 }
 
-h3{
-    margin-bottom:5px;
+h3 {
+    line-height: 30px;
+    margin-bottom: 5px;
     margin-top: 17px;
 }
-.span_destaque{
+
+.span_destaque {
     background-color: var(--green);
 }
 
-#logo:hover{
+#logo:hover {
     cursor: pointer;
     width: 210px;
 
 }
-#button_cadastro{
+
+#button_cadastro {
     border: 0.5px solid transparent;
     background-color: var(--white);
     color: var(--color-primary);
 
     font-weight: 600;
 }
-#button_cadastro:hover{
+
+#button_cadastro:hover {
     border: 0.5px solid transparent;
     background-color: var(--color-primary);
     color: var(--white);
@@ -69,86 +71,96 @@ h3{
 
 }
 
-#button_login{
+#button_login {
     background-color: var(--color-primary);
     color: var(--white);
     border: 0.5px solid transparent;
     font-weight: 600;
 }
-#button_login:hover{
+
+#button_login:hover {
     background-color: var(--white);
     color: var(--color-primary);
     border: 0.5px solid var(--white);
     transition: all 0.4s ease-in-out;
 
 }
+
 /* ACABA MENU */
-#p_banner{
+#p_banner {
     text-align: start;
 
 }
-#div_banner_frase{
+
+#div_banner_frase {
     justify-content: space-evenly;
     align-items: center;
     height: 550px;
 }
-#frase{
+
+#frase {
     justify-self: center;
     align-self: center;
     width: 50%;
     font-size: 150%;
     text-align: center;
 }
-#div_banner_button{
+
+#div_banner_button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#div_banner_button button{
+
+#div_banner_button button {
     align-self: flex-end;
 }
 
-#div_motiv{
+#div_motiv {
     width: 60%;
     text-align: center;
     margin-bottom: 20px;
 }
 
-#mountain-image{
+#mountain-image {
     width: 80%;
     background-color: var(--desabled);
     background-image: url(../images/montanha.png);
     background-repeat: no-repeat;
     height: 450px;
 }
-.mountain-text{
+
+.mountain-text {
     width: 100%;
 }
 
- .div_checks{
+.div_checks {
     width: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.gg-check{
+.gg-check {
     color: var(--green);
 }
-.div_footer_item{
+
+.div_footer_item {
     justify-content: space-between;
     align-items: center;
 }
-#div_direitos{
+
+#div_direitos {
     align-self: center;
     justify-self: center;
 }
 
-#container-box{
+#container-box {
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     height: 450px;
 }
-.box{
+
+.box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,25 +170,27 @@ h3{
     padding: 5px;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-#box-central{
+
+#box-central {
     align-self: flex-start;
     justify-self: flex-start;
     border: none;
 }
 
-.svg-box{
+.svg-box {
     width: 80px;
     height: 80px;
 }
-.p-box{
+
+.p-box {
     text-align: center;
 }
 
-.box h4{
+.box h4 {
     color: var(--green);
 }
 
-#mensagem_erro{
+#mensagem_erro {
     display: flex;
     justify-content: center;
 }

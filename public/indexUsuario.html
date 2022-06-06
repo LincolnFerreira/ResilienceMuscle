@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="./css/modal.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href='https://css.gg/css' rel='stylesheet'>
-    <link href='https://css.gg/css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/cbc73789ee.js" crossorigin="anonymous"></script>
+
     <title>Inicio</title>
     <script src="./js/funcoes.js"></script>
 
@@ -27,56 +28,57 @@
         <div class="modal-content">
             <span class="close">x</span>
             <div class="flex-column body-modal">
-                    <div class="flex-row transparent">
-                        <div class="div_form">
-                            <select class="input_form" placeholder="musculo" id="select_musculo" required>
-                                <option value="costas">costas</option>
-                                <option value="bíceps">bíceps</option>
-                                <option value="trapezio">trapezio</option>
-                                <option value="ombro">ombro</option>
-                                <option value="tríceps">tríceps</option>
-                                <option value="antebraço">antebraço</option>
-                                <option value="abdomen">abdomen</option>
-                                <option value="obliquo">obliquo</option>
-                                <option value="quadriceps">quadriceps</option>
-                                <option value="posterior de coxa">posterior de coxa</option>
-                                <option value="panturrilha">panturrilha</option>
-                                <option value="gluteo">gluteo</option>
-                                <option value="coluna">coluna</option>
-                            </select>
-                        </div>
-                        <div class="div_form">
-                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_exercicio"
-                                 required>
-                            <label class="label_form" for="input_exercicio">Exercicio:</label>
-                        </div>
-                        <div class="div_form">
-                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_qtd_repeticoes_penultima_serie"
-                                 required>
-                            <label class="label_form" for="input_qtd_repeticoes_penultima_serie">Quantidade de repetições da penultima série:</label>
-                        </div>
-                        <div class="div_form">
-                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_penultima_serie"
-                                 required>
-                            <label class="label_form" for="input_peso_penultima_serie">Peso da penultima série</label>
-                        </div>
-                        <div class="div_form">
-                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_qtd_repeticoes_ultima_serie"
-                                 required>
-                            <label class="label_form" for="input_qtd_repeticoes_ultima_serie">Quantidade de repetições da ultima série:</label>
-                        </div>
-                        <div class="div_form">
-                            <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_ultima_serie"
-                                 required>
-                            <label class="label_form" for="input_peso_ultima_serie">Peso da ultima série</label>
-                        </div>
+                <div class="flex-row transparent">
+                    <div class="div_form">
+                        <select class="input_form" placeholder="musculo" id="select_musculo" required>
+                            <option value="costas">costas</option>
+                            <option value="bíceps">bíceps</option>
+                            <option value="trapezio">trapezio</option>
+                            <option value="ombro">ombro</option>
+                            <option value="tríceps">tríceps</option>
+                            <option value="antebraço">antebraço</option>
+                            <option value="abdomen">abdomen</option>
+                            <option value="obliquo">obliquo</option>
+                            <option value="quadriceps">quadriceps</option>
+                            <option value="posterior de coxa">posterior de coxa</option>
+                            <option value="panturrilha">panturrilha</option>
+                            <option value="gluteo">gluteo</option>
+                            <option value="coluna">coluna</option>
+                        </select>
                     </div>
-
+                    <div class="div_form">
+                        <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_exercicio" required>
+                        <label class="label_form" for="input_exercicio">Exercicio:</label>
+                    </div>
+                    <div class="div_form">
+                        <input class="input_form" placeholder="" onkeyup="pressEnter()"
+                            id="input_qtd_repeticoes_penultima_serie" required>
+                        <label class="label_form" for="input_qtd_repeticoes_penultima_serie">Quantidade de repetições da
+                            penultima série:</label>
+                    </div>
+                    <div class="div_form">
+                        <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_penultima_serie"
+                            required>
+                        <label class="label_form" for="input_peso_penultima_serie">Peso da penultima série</label>
+                    </div>
+                    <div class="div_form">
+                        <input class="input_form" placeholder="" onkeyup="pressEnter()"
+                            id="input_qtd_repeticoes_ultima_serie" required>
+                        <label class="label_form" for="input_qtd_repeticoes_ultima_serie">Quantidade de repetições da
+                            ultima série:</label>
+                    </div>
+                    <div class="div_form">
+                        <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_ultima_serie"
+                            required>
+                        <label class="label_form" for="input_peso_ultima_serie">Peso da ultima série</label>
+                    </div>
                 </div>
-                <div id="div_select_frequencia"></div>
 
             </div>
+            <div id="div_select_frequencia"></div>
+
         </div>
+    </div>
     </div>
     <div class="flex-row">
 
@@ -87,17 +89,25 @@
                 <img src="./images/texto-logo.png" width="250px">
             </div>
             <div id="menu-mid" class="menu_user">
+                <span>Menu principal</span>
                 <ul class="flex-column menu">
-                    <li> <i id="fa-icon-calendar"></i> Tabela de desempenho </li>
-                    <li> Calendario </li>
-                    <li> Conhecimento </li>
+                    <div id="container-menu">
+                        <div class="div-select-menu" id="ativador"></div>
+                        <li class="li-menu">Tabela de desempenho </li>
+                    </div>
+                    <div id="container-menu">
+                        <div class="div-select-menu"></div>
+                        <li class="li-menu"> Calendario </li>
+                    </div>
+                    <div id="container-menu">
+                        <div class="div-select-menu"></div>
+                        <li class="li-menu"> Conhecimento </li>
+                    </div>
                 </ul>
             </div>
-            <hr>
-            <div id="menu-bottom" class="menu_user">
-                <div class="circle"></div>
-                <img src="./images/SVG/out.svg" class="img_pointer" width="30px">
-
+            <div id="menu-bottom" class="menu_user" style="background-color: var(--dark-light);">
+                <i class="fa-solid fa-power-off fa-lg" style="color: white; "></i>
+                <span style="color:white;font-size: 10px;">Sair</span>
             </div>
         </div>
 
@@ -733,7 +743,7 @@
     function escolheFrequencia() {
         var qtdFrequencia = Number(select_frequencia.value);
         div_select_frequencia.innerHTML = null;
-        
+
     }
 
     function escolheMusculo() {
