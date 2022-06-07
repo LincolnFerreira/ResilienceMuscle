@@ -38,7 +38,7 @@
                 <div class="flex-column">
                     <h1>Adicionar um novo treino feito!</h1>
                     Musculo:
-                    <select class="input_form" placeholder="musculo" id="select_musculo" id="input_musculo" required>
+                    <select class="input_form" placeholder="musculo" id="input_musculo" required>
                         <option value="costas">costas</option>
                         <option value="bíceps">bíceps</option>
                         <option value="trapezio">trapezio</option>
@@ -65,7 +65,7 @@
                     </select>
                     <span>Repetições Máxima</span><input class="input_form" type="text" id="repeticao_maxima">
                     <span>Repetições Minima</span><input class="input_form" type="text" id="repeticao_minima">
-                    <button class="btn button dark" onclick="acrescentaTreino()">Acrescentar treino</button>
+                    <button class="btn button dark" onclick="cadastroTreino()">Acrescentar treino</button>
                 </div>
                 <!-- AQUI É ONDE ACABA O BODY DO MODAL-->
 
@@ -84,7 +84,7 @@
                 <ul class="flex-column menu">
                     <div class="topico-menu" onclick="ativaMenu('#desempenho')">
                         <div class="div-select-menu ativador" id="desempenho"></div>
-                        <li class="li-menu">Tabela de desempenho </li>
+                        <li class="li-menu">Musculos do corpo</li>
                     </div>
 
                     <div class="topico-menu" onclick="ativaMenu('#conhecimento')">
@@ -114,7 +114,6 @@
                     </h2>
                     <div>
                         <i class="fa-solid fa-bell fa-xl"></i>
-                        <div>teste</div>
                     </div>
                 </div>
                 <div class="flex-row container-box">
@@ -157,9 +156,9 @@
                             </div>
                         </div>
                     </div>
-                    <div id="div_dinamica_conhecimento" class="flex-row">
+                    <div id="div_dinamica_conhecimento" class="flex-row center_conhecimento">
                         <div>
-                            <div id="text_sistema_muscular">
+                            <div id="text_sistema_muscular" class="flex-column">
                                 <h3>Alguns conhecimentos gerais porém importantes </h3>
                                 <span>-A hipertrofia muscular é o aumento do tamanho e volume dos músculos em
                                     resultado
@@ -221,6 +220,9 @@
 
                         </div>
                     </div>
+                    <br>
+                    <br>
+                
                     <div id="comentario-box">
                         <h3>Comentario:</h3>
                         <textarea name="" id="" cols="30" rows="10" class="comentario"

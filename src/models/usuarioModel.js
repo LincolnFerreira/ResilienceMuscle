@@ -62,19 +62,19 @@ function cadastroFinal(idUsuario, sexo, classificacao, frequencia) {
     return database.executar(instrucao);
 
 
-}
+};
 
 
 function cadastroTreino(idUsuario,
-    input_musculo,
-    input_exercicio,
-    input_peso,
-    select_intensidade,
-    repeticao_maxima,
-    repeticao_minima) {
+    musculo,
+    exercicio,
+    peso,
+    intensidade,
+    repeticaoMaxima,
+    repeticaoMinima) {
     var instrucao = `
-    insert into desempenho (data, musculo, exercicio, intensidade, peso, repeticoesMax, repeticoesMin, fkUsuario) VALUES ('','${musculo}','${exercicio}','${peso}','${intensidade}','${repeticaoMaxima}','${repeticaoMinima}')
-`;
+    insert into desempenho (musculo, exercicio, intensidade, peso, repeticoesMax, repeticoesMin, fkUsuario) VALUES ('${musculo}','${exercicio}','${intensidade}','${peso}','${repeticaoMaxima}','${repeticaoMinima}','${idUsuario}')`;
+return database.executar(instrucao);
 }
 
 
@@ -88,5 +88,7 @@ module.exports = {
     listar,
     listarHistorico,
     kpiMetrica,
-    cadastroFinal
+    cadastroFinal,
+    cadastroTreino
+
 };

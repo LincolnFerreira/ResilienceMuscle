@@ -37,6 +37,7 @@ router.post("/cadastroFinal/:idUsuario", function (req, res) {
     usuarioController.cadastroFinal(req, res);
 });
 router.post("/cadastroTreino/:idUsuario", function (req, res) {
+    console.log('teste')
     usuarioController.cadastroTreino(req, res);
 });
 

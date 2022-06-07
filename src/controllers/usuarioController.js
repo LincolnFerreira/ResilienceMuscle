@@ -115,20 +115,20 @@ function listarHistorico(req, res) {
 
 function cadastroTreino(req, res) {
     var idUsuario = req.params.idUsuario;
-    var input_musculo = req.params.input_musculo;
-    var input_exercicio = req.params.input_exercicio;
-    var input_peso = req.params.input_peso;
-    var select_intensidade = req.params.select_intensidade;
-    var repeticao_maxima = req.params.repeticao_maxima;
-    var repeticao_minima = req.params.repeticao_minima;
-    usuarioModel.cadastroFinal(
+    var musculo = req.body.musculo;
+    var exercicio = req.body.exercicio;
+    var peso = req.body.peso;
+    var intensidade = req.body.intensidade;
+    var repeticaoMaxima = req.body.maxima;
+    var repeticaoMinima = req.body.minima;
+    usuarioModel.cadastroTreino(
             idUsuario,
-            input_musculo,
-            input_exercicio,
-            input_peso,
-            select_intensidade,
-            repeticao_maxima,
-            repeticao_minima)
+            musculo,
+            exercicio,
+            peso,
+            intensidade,
+            repeticaoMaxima,
+            repeticaoMinima)
         .then(
             function (resultado) {
                 res.status(200).json(resultado);
@@ -187,5 +187,6 @@ module.exports = {
     listarHistorico,
     kpiMetrica,
     testar,
-    cadastroFinal
+    cadastroFinal,
+    cadastroTreino
 }

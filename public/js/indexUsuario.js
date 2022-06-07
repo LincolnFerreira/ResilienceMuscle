@@ -273,10 +273,10 @@ function nomeDinamico() {
 function cadastroTreino() {
     var musculo = input_musculo.value;
     var exercicio = input_exercicio.value;
-    var peso = input_peso.value;
+    var peso = Number(input_peso.value);
     var intensidade = select_intensidade.value;
-    var maxima = repeticao_maxima.value;
-    var minima = repeticao_minima.value;
+    var maxima = Number(repeticao_maxima.value);
+    var minima = Number(repeticao_minima.value);
     fetch("usuarios/cadastroTreino/" + idUsuario, {
             method: "POST",
             headers: {
