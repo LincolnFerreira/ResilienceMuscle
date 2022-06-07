@@ -23,734 +23,220 @@
 </head>
 
 <body>
+    <div class="flex-column mensagem-box">
+        <div id="mensagem_randomica">
+            <h5>Já foi treinar hoje ? </h5>
+        </div>
+    </div>
     <div id="div_modal" class="modalatual">
         <!-- MODAL -->
         <div class="modal-content">
-            <span class="close">x</span>
-            <div class="flex-column body-modal">
-                <div class="flex-row transparent">
-                    <div class="div_form">
-                        <select class="input_form" placeholder="musculo" id="select_musculo" required>
-                            <option value="costas">costas</option>
-                            <option value="bíceps">bíceps</option>
-                            <option value="trapezio">trapezio</option>
-                            <option value="ombro">ombro</option>
-                            <option value="tríceps">tríceps</option>
-                            <option value="antebraço">antebraço</option>
-                            <option value="abdomen">abdomen</option>
-                            <option value="obliquo">obliquo</option>
-                            <option value="quadriceps">quadriceps</option>
-                            <option value="posterior de coxa">posterior de coxa</option>
-                            <option value="panturrilha">panturrilha</option>
-                            <option value="gluteo">gluteo</option>
-                            <option value="coluna">coluna</option>
-                        </select>
-                    </div>
-                    <div class="div_form">
-                        <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_exercicio" required>
-                        <label class="label_form" for="input_exercicio">Exercicio:</label>
-                    </div>
-                    <div class="div_form">
-                        <input class="input_form" placeholder="" onkeyup="pressEnter()"
-                            id="input_qtd_repeticoes_penultima_serie" required>
-                        <label class="label_form" for="input_qtd_repeticoes_penultima_serie">Quantidade de repetições da
-                            penultima série:</label>
-                    </div>
-                    <div class="div_form">
-                        <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_penultima_serie"
-                            required>
-                        <label class="label_form" for="input_peso_penultima_serie">Peso da penultima série</label>
-                    </div>
-                    <div class="div_form">
-                        <input class="input_form" placeholder="" onkeyup="pressEnter()"
-                            id="input_qtd_repeticoes_ultima_serie" required>
-                        <label class="label_form" for="input_qtd_repeticoes_ultima_serie">Quantidade de repetições da
-                            ultima série:</label>
-                    </div>
-                    <div class="div_form">
-                        <input class="input_form" placeholder="" onkeyup="pressEnter()" id="input_peso_ultima_serie"
-                            required>
-                        <label class="label_form" for="input_peso_ultima_serie">Peso da ultima série</label>
-                    </div>
+            <div class="flex-column" id="corpo_modal">
+                <span class="close" id="close_request">x</span>
+
+                <!-- AQUI É ONDE COMEÇA O BODY DO MODAL-->
+                <div class="flex-column">
+                    <h1>Adicionar um novo treino feito!</h1>
+                    Musculo:
+                    <select class="input_form" placeholder="musculo" id="select_musculo" id="input_musculo" required>
+                        <option value="costas">costas</option>
+                        <option value="bíceps">bíceps</option>
+                        <option value="trapezio">trapezio</option>
+                        <option value="ombro">ombro</option>
+                        <option value="tríceps">tríceps</option>
+                        <option value="antebraço">antebraço</option>
+                        <option value="abdomen">abdomen</option>
+                        <option value="obliquo">obliquo</option>
+                        <option value="quadriceps">quadriceps</option>
+                        <option value="posterior de coxa">posterior de coxa</option>
+                        <option value="panturrilha">panturrilha</option>
+                        <option value="gluteo">gluteo</option>
+                        <option value="coluna">coluna</option>
+                    </select>
+                    <span>Exercicio:</span><input class="input_form" type="text" id="input_exercicio">
+                    <span>Peso:</span><input class="input_form" type="text" id="input_peso">
+                    <span>Intensidade do Treino:</span>
+                    <select class="input_form" id="select_intensidade">
+                        <option value="Baixa">Baixa</option>
+                        <option value="Intermediária">Intermediária</option>
+                        <option value="Submáxima">Submáxima</option>
+                        <option value="Máxima">Máxima</option>
+                        <option value="Supermáxima">Supermáxima</option>
+                    </select>
+                    <span>Repetições Máxima</span><input class="input_form" type="text" id="repeticao_maxima">
+                    <span>Repetições Minima</span><input class="input_form" type="text" id="repeticao_minima">
+                    <button class="btn button dark" onclick="acrescentaTreino()">Acrescentar treino</button>
                 </div>
+                <!-- AQUI É ONDE ACABA O BODY DO MODAL-->
 
+                <div id="div_select_frequencia"></div>
             </div>
-            <div id="div_select_frequencia"></div>
-
         </div>
     </div>
-    </div>
     <div class="flex-row">
-
         <!-- MENU LATERAL -->
         <div class="container-menu flex-column ">
-
             <div id="menu-top" class="menu_user">
                 <img src="./images/texto-logo.png" width="250px">
             </div>
             <div id="menu-mid" class="menu_user">
                 <span>Menu principal</span>
                 <ul class="flex-column menu">
-                    <div id="container-menu">
-                        <div class="div-select-menu" id="ativador"></div>
+                    <div class="topico-menu" onclick="ativaMenu('#desempenho')">
+                        <div class="div-select-menu ativador" id="desempenho"></div>
                         <li class="li-menu">Tabela de desempenho </li>
                     </div>
-                    <div id="container-menu">
-                        <div class="div-select-menu"></div>
-                        <li class="li-menu"> Calendario </li>
-                    </div>
-                    <div id="container-menu">
-                        <div class="div-select-menu"></div>
+
+                    <div class="topico-menu" onclick="ativaMenu('#conhecimento')">
+                        <div class="div-select-menu" id="conhecimento"></div>
                         <li class="li-menu"> Conhecimento </li>
+                    </div>
+                    <div class="topico-menu" onclick="ativaMenu('#performance')">
+                        <div class="div-select-menu" id="performance"></div>
+                        <li class="li-menu"> performance </li>
                     </div>
                 </ul>
             </div>
-            <div id="menu-bottom" class="menu_user" style="background-color: var(--dark-light);">
-                <i class="fa-solid fa-power-off fa-lg" style="color: white; "></i>
-                <span style="color:white;font-size: 10px;">Sair</span>
+            <div id="menu-bottom" class="menu_user">
+                <div onclick="limparSessao()" class="out_session">
+                    <i class="fa-solid fa-power-off fa-lg"></i>
+                    <span id="spansession">Sair</span>
+                </div>
             </div>
         </div>
-
-
         <!-- FINAL DO MENU LATERAL -->
         <!-- CORPO DA PAGINA -->
         <div class="container-body flex-column">
             <div class="container-analises flex-column">
-                <h2 id="bem-vindo">Seja bem vindo <span id="h3_nome_usuario"></span></h2>
+                <div class="flex-row header">
+                    <h2 id="bem-vindo">Seja bem vindo <span style="color: var(--desabled)!important;"
+                            id="nome_dinamico"> - </span>
+                    </h2>
+                    <div>
+                        <i class="fa-solid fa-bell fa-xl"></i>
+                        <div>teste</div>
+                    </div>
+                </div>
                 <div class="flex-row container-box">
-                    <div class="box-dados flex-column treina">
-                        <div id="p_duvida_treinou" class="center">
-                            <p>Treinou hoje ?</p>
+                    <div class="box-dados flex-column">
+                        <p class="p_box_kpi">Dias treinados</p>
+                        <div class="flex-row box-number">
+                            <h1 class="h1_box_number" id="kpi_quantidade_dias_treino">-</h1>
+                            <span id="kpi_porcentagem_frequencia">-</span>
                         </div>
-                        <div id="h3_foi_treinar" class="center pointer">
-                            <h3>Fui treinar</h1>
+                        <p>Dias totais do mês</p>
+                    </div>
+                    <div class="box-dados flex-column">
+                        <p class="p_box_kpi">Treino de hoje</p>
+                        <h1 class="h1_box_number destaque">Peito</h1>
+                    </div>
+                    <div class="box-dados flex-column">
+                        <p class="p_box_kpi">Status</p>
+                        <img class="face" src="images/SVG/happy-face.svg" id="kpi_status">
+                        <p class="p_box_porcentagem" id="kpi_status_texto">-</p>
+                    </div>
+                </div>
+                <hr id="hr_box">
+            </div>
+            <div class="flex-column desempenho ">
+                <button class="button" onclick="adicionarTreino()">Adicionar</button>
+            </div>
+            <div class="container-lg dinamica">
+                <div id="div_dinamica" class="flex-row">
+                    <div id="container_sistema_muscular" class="show">
+                        <div>
+                            <h5>Sistema Muscular</h5>
+                            <div id="body_svg_component"></div>
                         </div>
-                        <div id="h3_nao_treinou" class="center pointer">
-                            <h3>Não fui treinar<h1>
-                        </div>
-                    </div>
-                    <div class="box-dados flex-column">
-                        <p class="p_box_kpi">Dias de treino</p>
-                        <h1 class="h1_box_number">17</h1>
-                        <p class="p_box_porcentagem">-12% de frequência</p>
-                    </div>
-                    <div class="box-dados flex-column">
-                        <p class="p_box_kpi">Dias de treino</p>
-                        <h1 class="h1_box_number">17</h1>
-                        <p class="p_box_porcentagem">-12% de frequência</p>
-                    </div>
-                    <div class="box-dados flex-column">
-                        <p class="p_box_kpi">Dias de treino</p>
-                        <h1 class="h1_box_number">17</h1>
-                        <p class="p_box_porcentagem">-12% de frequência</p>
-                    </div>
-                    <div class="box-dados flex-column">
-                        <p class="p_box_kpi">Dias de treino</p>
-                        <h1 class="h1_box_number">17</h1>
-                        <p class="p_box_porcentagem">-12% de frequência</p>
-                    </div>
+                        <div id="text_sistema_muscular">
+                            <div class="flex-column">
+                                <div class="dinamica_sistema_muscular">
 
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div_dinamica_conhecimento" class="flex-row">
+                        <div>
+                            <div id="text_sistema_muscular">
+                                <h3>Alguns conhecimentos gerais porém importantes </h3>
+                                <span>-A hipertrofia muscular é o aumento do tamanho e volume dos músculos em
+                                    resultado
+                                    à
+                                    sobrecarga imposta.</span><br>
+                                <span>-Existem diversos tipos de treinos para desenvolver a hipertrofia muscular.
+                                    Entre
+                                    os
+                                    mais conhecidos, estão o treino pirâmide e o drop set.</span><br>
+                                <span>-A diferença entre o treino pirâmide e o treino drop set, é que o primeiro é
+                                    recomendado para o aumento de força, enquanto o segundo ajuda no ganho de
+                                    resistência
+                                    muscular. </span><br>
+                                <span>-Whey Protein: é a proteína feita a partir do soro do leite, geralmente
+                                    extraída
+                                    no
+                                    decorrer do processo de transformação do leite em queijo.</span><br>
+                                <span>-Creatina: quando associada a atividades físicas de alta intensidade, aumenta
+                                    a
+                                    síntese
+                                    de proteína, tornando-se fundamental para os praticantes de musculação.</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div_dinamica_performance" class="flex-row">
+                        <table>
+                            <thead>
+                                <tr>
+
+                                    <th>Data</th>
+                                    <th>Músculo</th>
+                                    <th>Volume</th>
+                                    <th>Intensidade</th>
+                                    <th>Repetições Max</th>
+                                    <th>Repetições Min</th>
+                                    <th>Séries</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historico_dinamico">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="flex-column container-lateral">
+                    <div class="flex-column" id="calendario-box">
+                        <h3> Calendario</h3>
+                        <span>Junho</span>
+                        <div class="flex-row" id="semana-box">
+                            <div>Dom</div>
+                            <div>Seg</div>
+                            <div>Ter</div>
+                            <div>Qua</div>
+                            <div>Qui</div>
+                            <div>Sex</div>
+                            <div>Sáb</div>
+                        </div>
+                        <div class="flex-row" id="dia_box">
+
+                        </div>
+                    </div>
+                    <div id="comentario-box">
+                        <h3>Comentario:</h3>
+                        <textarea name="" id="" cols="30" rows="10" class="comentario"
+                            placeholder="Deixe uma frase motivacional aqui...."></textarea>
+                        <div id="div_textarea_button"><button class="button button-border">Obrigado por
+                                compartilhar!!!</button></div>
+                    </div>
                 </div>
             </div>
-            <div class="flex-column desempenho">
-                <button class="button-destaque" onclick="adicionarTreino()">Adicionar <i class="gg-add-r"></i></button>
-                <table id="table_desempenho">
-                    <tr class="table-title">
-                        <th>Data</th>
-                        <th>Musculo</th>
-                        <th>Exercicio</th>
-                        <th>Peso</th>
-                        <th>Repetição</th>
-                    </tr>
-                    <tr>
-                        <td id="td-desempenho-data">22/05/2022</td>
-                        <td id="td-desempenho-musculo">Costas</td>
-                        <td id="td-desempenho-exercicio">Terra</td>
-                        <td id="td-desempenho-peso">25</td>
-                        <td id="td-desempenho-repeticoes">12</td>
-                    </tr>
-                    <tr>
-                        <td>22/05/2022</td>
-                        <td>Costas</td>
-                        <td>Terra</td>
-                        <td>25</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>22/05/2022</td>
-                        <td>Costas</td>
-                        <td>Terra</td>
-                        <td>25</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>22/05/2022</td>
-                        <td>Costas</td>
-                        <td>Terra</td>
-                        <td>25</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>22/05/2022</td>
-                        <td>Costas</td>
-                        <td>Terra</td>
-                        <td>25</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>22/05/2022</td>
-                        <td>Costas</td>
-                        <td>Terra</td>
-                        <td>25</td>
-                        <td>12</td>
-                    </tr>
-                </table>
-            </div>
-            <div id="body-user" class="flex-column">
-                <div id="container-sistema-muscular">
-                    <h5>Sistema Muscular</h5>
-
-                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 676.2 1337.21"
-                        style="width: 250px;">
-                        <defs>
-
-                        </defs>
-                        <title>corpo homem</title>
-                        <g id="Muscle_Map_-_Male" data-name="Muscle Map - Male">
-                            <g id="Front_Side" data-name="Front Side">
-                                <!-- PERNA -->
-                                <g id="Legs">
-                                    <path class="cls-1 combo desabled"
-                                        d="M1494.42,1505.91c13.06,57.6-7.06,150.25-7.06,150.25a46.81,46.81,0,0,1-6.23,1.27h-.45l-.36,0h0c-2.45-.2-7.07-1.23-7.07-1.23s8.82-53.49,6.2-105.18-62.51-159.09-62.51-159.09a196.47,196.47,0,0,0,24.93-19v0a151.19,151.19,0,0,0,33.39-42.94s4.62,31.9,32.22,28.49C1507.48,1358.45,1481.47,1448.76,1494.42,1505.91Z"
-                                        transform="translate(-998.49 -429.75)" title="Este é o meu tooltip"
-                                        onclick="seleciona(this)">
-                                        <title>Indisponivel</title>
-                                    </path>
-                                    <path class="cls-1 combo " data-name="vasto-medial"
-                                        d="M1441.87,1372.9v0a196.47,196.47,0,0,1-24.93,19,42.67,42.67,0,0,0-2-9.13c-2.1-5-11-25.49-20.52-47.63,0,0,15.23-59.26,30.48-123.87Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>vasto-medial</title>
-                                    </path>
-                                    <path class="cls-1 combo " data-name="extensor-cruto-dos-dedos"
-                                        d="M1548.76,1732.67c-4,1.12-8.36,2.28-11.21,2.85a14.28,14.28,0,0,1-1.5.21s-20.69-29.72-28.57-44.36c-8.58-15.95-6-36.71-6-36.71a45.77,45.77,0,0,1,9.7,1.5s4,26.81,8.34,34.13S1545.09,1730.44,1548.76,1732.67Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-cruto-dos-dedos</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="extensor-cruto-dos-dedos2"
-                                        d="M1558.25,1729.9c-.2.06-4.56,1.39-9.49,2.77-3.67-2.23-25-35.06-29.29-42.38s-8.34-34.13-8.34-34.13h0c.23.09.48.2.76.29h0a2.09,2.09,0,0,0,.3.11,16.24,16.24,0,0,0,4.54.85,16.54,16.54,0,0,0,7-1.25s-1.79,17.79.24,23.89,12.2,26.43,23.38,38.63C1551.17,1722.87,1555,1726.57,1558.25,1729.9Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-cruto-dos-dedos2</title>
-                                    </path>
-                                    <path class="cls-1 combo " data-name="extensor-longo-dos-dedos"
-                                        d="M1519.47,1735.39c-5.22-.27-10.21-.42-13.22.13a32,32,0,0,1-3.35.39s-17.31-28.1-18.61-41.5c-2-20.27-4-37-4-37h0l.36,0h.45a46.81,46.81,0,0,0,6.23-1.27c.66-.18,1.38-.36,2.16-.52,0,.41-1.2,19.32,6.25,35.3C1502.28,1704.89,1519.47,1735.39,1519.47,1735.39Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-longo-dos-dedos</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="extensor-longo-dos-dedos2"
-                                        d="M1502.9,1735.91c-7.71.53-19.33-.52-19.33-.52,0-5.33,0-8.83-2.44-12.79-4.05-6.61-10.06-10.91-9.05-24.12s4.47-20.33,3-25.92-1.79-16.4-1.79-16.4h0s4.62,1,7.07,1.23c0,0,2,16.75,4,37C1485.59,1707.81,1502.9,1735.91,1502.9,1735.91Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-longo-dos-dedos2</title>
-                                    </path>
-                                    <path class="cls-1 combo desabled"
-                                        d="M1483.57,1735.39a105,105,0,0,0,.73,13.8c1.3,10.45,11.19,16.27,19.83,16.27s39.15-2.55,51.85-4.07,13.22-9.15,13.22-15.76c0-4.35-4.61-9.35-10.94-15.73h0c-.2.06-4.56,1.39-9.49,2.77-4,1.12-8.36,2.28-11.21,2.85a14.28,14.28,0,0,1-1.5.21c-4,.4-10.45,0-16.58-.34-5.22-.27-10.21-.42-13.22.13a32,32,0,0,1-3.35.39C1495.19,1736.44,1483.57,1735.39,1483.57,1735.39Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>Indisponivel</title>
-                                    </path>
-                                    <path class="cls-1 combo desabled"
-                                        d="M1177.41,1690.94c-6.51,14-23.7,44.45-23.7,44.45-6.13.3-12.6.74-16.58.34,0,0,20.7-29.72,28.57-44.36,8.58-15.95,6-36.71,6-36.71l1.64-.05a47,47,0,0,1,10.28,1h0C1183.69,1656.05,1184.87,1675,1177.41,1690.94Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>Indisponivel</title>
-                                    </path>
-                                    <path class="cls-1 combo desabled"
-                                        d="M1495.78,1690.94c6.51,14,23.7,44.45,23.7,44.45,6.13.3,12.59.74,16.58.34,0,0-20.7-29.72-28.58-44.36-8.58-15.95-6-36.71-6-36.71l-1.64-.05a47,47,0,0,0-10.28,1h0C1489.5,1656.05,1488.32,1675,1495.78,1690.94Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>Indisponivel</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="extensor-curto-dos-dedos"
-                                        d="M1165.7,1691.37c-7.87,14.64-28.57,44.36-28.57,44.36a14.28,14.28,0,0,1-1.5-.21c-2.85-.57-7.22-1.73-11.21-2.85,3.67-2.23,25-35.06,29.29-42.38s8.34-34.13,8.34-34.13a45.88,45.88,0,0,1,9.7-1.5S1174.28,1675.42,1165.7,1691.37Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-cruto-dos-dedos</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="extensor-curto-dos-dedos2"
-                                        d="M1162.05,1656.16s-4,26.81-8.34,34.13-25.62,40.15-29.29,42.38c-4.93-1.38-9.29-2.71-9.49-2.77,3.3-3.33,7.08-7,10.91-11.22,11.18-12.2,21.35-32.53,23.38-38.63s.24-23.89.24-23.89a16.54,16.54,0,0,0,7,1.25A16.33,16.33,0,0,0,1162.05,1656.16Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-cruto-dos-dedos2</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="extensor-longo-dos-dedos"
-                                        d="M1192.87,1657.39s-2,16.75-4,37c-1.31,13.4-18.62,41.5-18.62,41.5a32,32,0,0,1-3.35-.39c-3-.55-8-.4-13.22-.13,0,0,17.19-30.5,23.7-44.45,7.46-16,6.28-34.89,6.26-35.3.77.16,1.49.34,2.16.52a46.81,46.81,0,0,0,6.23,1.27C1192.28,1657.43,1192.55,1657.42,1192.87,1657.39Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-longo-dos-dedos</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="extensor-longo-dos-dedos2"
-                                        d="M1192.06,1722.6c-2.43,4-2.45,7.46-2.45,12.79,0,0-11.62,1-19.33.52,0,0,17.31-28.1,18.62-41.5,2-20.27,4-37,4-37,2.44-.2,7.07-1.23,7.07-1.23s-.26,10.81-1.78,16.4,1.92,12.7,2.94,25.92S1196.1,1716,1192.06,1722.6Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>extensor-longo-dos-dedos2</title>
-                                    </path>
-                                    <path class="cls-1 combo desabled"
-                                        d="M1189.61,1735.39a105,105,0,0,1-.73,13.8c-1.29,10.45-11.19,16.27-19.83,16.27s-39.15-2.55-51.85-4.07-13.22-9.15-13.22-15.76c0-4.35,4.61-9.35,11-15.73h0c.2.06,4.56,1.39,9.49,2.77,4,1.12,8.36,2.28,11.21,2.85a14.28,14.28,0,0,0,1.5.21c4,.4,10.45,0,16.58-.34,5.22-.27,10.21-.42,13.22.13a32,32,0,0,0,3.35.39C1178,1736.44,1189.61,1735.39,1189.61,1735.39Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>Indisponivel</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="reto-femoral"
-                                        d="M1475.26,1330a151.19,151.19,0,0,1-33.39,42.94l-16.95-161.64v-.06c8.41-35.65,16.83-72.93,22.71-102.75,3-15.13,5.29-28.35,6.63-38.46,1.65,16.54,1.76,41.76,8.86,69.64,8.57,33.63,12.83,51.8,22.83,87.2C1491.44,1246.26,1496.88,1287.94,1475.26,1330Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>reto-femoral</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="vasto-medial"
-                                        d="M1507.48,1358.45c-27.6,3.41-32.22-28.49-32.22-28.49,21.62-42,16.18-83.7,10.69-103.13-10-35.4-14.26-53.57-22.83-87.2-7.1-27.88-7.21-53.1-8.86-69.64v0c-.09-.82-.17-1.62-.26-2.39,3.6,9.18,43.18,77,51.76,122.9C1521.69,1275.75,1507.48,1358.45,1507.48,1358.45Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>vasto-medial</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="fibular-longo"
-                                        d="M1521.92,1622.24c.83,14.91,1.19,26.94,1.81,33.92h0a16.54,16.54,0,0,1-7,1.25,16.24,16.24,0,0,1-4.54-.85,2.09,2.09,0,0,1-.3-.11h0c-.28-.09-.53-.2-.76-.29,0,0-5.47-42.39.1-67.67,20.27-91.93,12.71-160.28,11.68-168.64,3.15,14.09,5.68,27.13,6.2,34.72C1534.17,1529.48,1520,1587.2,1521.92,1622.24Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>fibular-longo</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="glacil"
-                                        d="M1454.26,1070v0c-1.34,10.11-3.65,23.33-6.63,38.46L1359.1,1243c-6.75-21.37-15.18-50.35-17.11-71.92,18.78-4,84-23.46,112-103.51C1454.09,1068.33,1454.17,1069.13,1454.26,1070Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>glacil</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="adutor-longo"
-                                        d="M1447.63,1108.45c-5.88,29.82-14.3,67.1-22.71,102.75v.06c-15.25,64.61-30.48,123.87-30.48,123.87-12.11-28.17-25.23-59.13-26.71-64.92-1-3.93-4.51-14.14-8.63-27.22Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>adutor-longo</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="gastrocnemio"
-                                        d="M1473.25,1656.16s-6-50.93-8.43-62.64c-10.84-52.41-36.87-79.68-40.47-105-3-21.34-4.22-73.93-7.41-96.67,0,0,59.88,107.41,62.51,159.09S1473.25,1656.16,1473.25,1656.16Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>gastrocnemio</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="reto-femoral2"
-                                        d="M1248.27,1211.2v.06l-17,161.64a151.33,151.33,0,0,1-33.38-42.94c-21.63-42-16.18-83.7-10.69-103.13,10-35.4,14.25-53.57,22.83-87.2,7.1-27.88,7.2-53.1,8.85-69.64,1.35,10.11,3.66,23.33,6.64,38.46C1231.44,1138.27,1239.86,1175.55,1248.27,1211.2Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>reto-femoral2</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="vasto-lateral"
-                                        d="M1219.19,1067.56c-.09.77-.17,1.57-.27,2.39v0c-1.65,16.54-1.75,41.76-8.85,69.64-8.58,33.63-12.83,51.8-22.83,87.2-5.49,19.43-10.94,61.11,10.69,103.13,0,0-4.63,31.9-32.23,28.49,0,0-14.21-82.7,1.73-168C1176,1144.54,1215.58,1076.74,1219.19,1067.56Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>vasto-lateral</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="fibular-longo"
-                                        d="M1162.05,1656.16a16.33,16.33,0,0,1-5.61,1.25,16.54,16.54,0,0,1-7-1.25c.62-7,1-19,1.81-33.92,2-35-12.25-92.76-7.2-167.67.51-7.59,3-20.63,6.2-34.72-1,8.36-8.6,76.71,11.68,168.64C1167.51,1613.77,1162.05,1656.16,1162.05,1656.16Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>fibular-longo</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="gracil"
-                                        d="M1331.2,1171.07c-1.93,21.57-10.36,50.55-17.11,71.92l-88.53-134.54c-3-15.13-5.29-28.35-6.64-38.46v0c.1-.82.18-1.62.27-2.39C1247.24,1147.61,1312.41,1167.06,1331.2,1171.07Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>gracil</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="adutor-longo"
-                                        d="M1314.09,1243c-4.12,13.08-7.64,23.29-8.64,27.22-1.48,5.79-14.59,36.75-26.7,64.92,0,0-15.23-59.26-30.48-123.87v-.06c-8.41-35.65-16.83-72.93-22.71-102.75Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>adutor-longo</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="vasto-medial"
-                                        d="M1278.75,1335.13c-9.51,22.14-18.42,42.58-20.52,47.63a42.67,42.67,0,0,0-2,9.13,197.32,197.32,0,0,1-24.94-19v0l17-161.64C1263.52,1275.87,1278.75,1335.13,1278.75,1335.13Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>vasto-medial</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="soleo"
-                                        d="M1256.25,1391.89c-3.19,22.74-4.36,75.33-7.41,96.67-3.6,25.28-29.64,52.55-40.47,105-2.43,11.71-8.43,62.64-8.43,62.64s-8.82-53.49-6.2-105.18S1256.25,1391.89,1256.25,1391.89Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>soleo</title>
-                                    </path>
-                                    <path class="cls-1 combo desabled"
-                                        d="M1199.94,1656.16s-4.63,1-7.07,1.23c-.32,0-.59,0-.81,0a46.81,46.81,0,0,1-6.23-1.27s-20.13-92.65-7.07-150.25c13-57.15-13.06-147.46-13.06-147.46,27.6,3.41,32.23-28.49,32.23-28.49a151.33,151.33,0,0,0,33.38,42.94v0a197.32,197.32,0,0,0,24.94,19s-59.88,107.41-62.51,159.09S1199.94,1656.16,1199.94,1656.16Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>Indisponivel</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="tibial-anterior"
-                                        d="M1183.67,1655.64h0a47,47,0,0,0-10.28-1l-1.64.05a45.88,45.88,0,0,0-9.7,1.5s5.46-42.39-.1-67.67c-20.28-91.93-12.71-160.28-11.68-168.64a.31.31,0,0,0,0-.09c6.41-28.55,15.42-61.31,15.42-61.31s26,90.31,13.06,147.46c-13.06,57.6,7.07,150.25,7.07,150.25C1185.16,1656,1184.44,1655.8,1183.67,1655.64Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>tibial-anterior</title>
-                                    </path>
-                                    <path class="cls-1 combo" data-name="tibial-anterior"
-                                        d="M1489.52,1655.64h0a47,47,0,0,1,10.28-1l1.64.05a46,46,0,0,1,9.7,1.5s-5.47-42.39.1-67.67c20.28-91.93,12.71-160.28,11.68-168.64a.31.31,0,0,1,0-.09c-6.42-28.55-15.43-61.31-15.43-61.31s-26,90.31-13.06,147.46c13.06,57.6-7.06,150.25-7.06,150.25C1488,1656,1488.75,1655.8,1489.52,1655.64Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title>tibial-anterior</title>
-                                    </path>
-                                </g>
-                                <!-- RETO ABDOMINAL-->
-                                <g id="Abs">
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1408,986.25c0,7.09-.16,14.45-.48,22-.5,11.37-1.4,22.14-2.53,32.29-1.93,11.32-6.15,25.39-13.2,40.92-9.82,21.69-49.81,89.57-49.81,89.57h0a12.87,12.87,0,0,1-5.39.93c0-34,0-152.5,0-184.81,3.34,9.11,26.6-2.61,38.23-3.88S1408,986.25,1408,986.25Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1265.17,986.25c0,7.09.16,14.45.48,22,.5,11.37,1.4,22.14,2.54,32.29,1.93,11.32,6.15,25.39,13.2,40.92,9.81,21.69,49.81,89.57,49.81,89.57h0a12.87,12.87,0,0,0,5.39.93c0-34,0-152.5,0-184.81-3.33,9.11-26.6-2.61-38.23-3.88S1265.17,986.25,1265.17,986.25Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1336.58,873.3v61.06c3.28,15.08,18.78,7.13,32.39,5.86,10.49-1,36.76-.3,37.69-.26-.79-16-2-33.18-3-36.61a26.44,26.44,0,0,1-.67-3.21l-.32,0-.17,0h0c-3.33-.3-19.83-1.88-32.83-4.25l-.2,0c-3.66-.6-7.08-1.24-10-1.89C1341.43,889.78,1336.58,875.16,1336.58,873.3Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1336.58,873.3v61s0,0,0,.05c-3.27,15.08-18.75,7.13-32.37,5.86-10.49-1-36.76-.3-37.69-.26.79-16,2-33.18,3-36.61a26.44,26.44,0,0,0,.67-3.21l.33,0,.17,0h0c3.33-.3,19.83-1.88,32.82-4.25l.21,0c3.65-.6,7.07-1.24,9.94-1.89C1331.76,889.78,1336.58,875.16,1336.58,873.3Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1336.58,934.31s0,2,0,5.33c0,9.41,0,29.07,0,40.67v6.88c-3.33,9.11-26.58-2.61-38.21-3.88s-33.2,2.93-33.2,2.93c0-3.15,0-6.54.1-9.58.09-3.4.19-6.72.33-10,0-4.53.47-13.38.92-23.26.06-1.08-.06-2.34,0-3.44.93,0,27.2-.74,37.69.26,13.62,1.27,29.1,9.22,32.37-5.86C1336.59,934.34,1336.58,934.33,1336.58,934.31Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1408,986.25s-21.56-4.21-33.2-2.94-34.89,13-38.23,3.88V934.31c3.26,15.15,18.76,7.18,32.39,5.91,10.49-1,36.76-.3,37.69-.26.06,1.1-.06,2.36,0,3.44.45,9.88.92,18.73.92,23.26.14,3.28.25,6.6.33,10,0,.71,0,1.42,0,2.16C1408,981.26,1408,983.83,1408,986.25Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1359.48,893.9c14.23,3.24,42.24,6.12,43.52,6.24a211.13,211.13,0,0,1-2.2-28.67,78,78,0,0,1,.93-14.64c.92-4.52,7.14-16.37,7.77-16.77a108.22,108.22,0,0,1-34,2.55c-18.86-1.69-37.69-8-38.89-16.66,0,0,0,28.32,0,47.35C1336.58,875.16,1341.42,889.78,1359.48,893.9Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo reto-abdominal"
-                                        d="M1313.7,893.9c-14.23,3.24-42.23,6.12-43.51,6.24a211.13,211.13,0,0,0,2.2-28.67,78,78,0,0,0-.93-14.64c-.92-4.52-7.14-16.37-7.77-16.77a108.22,108.22,0,0,0,34,2.55c18.86-1.69,37.69-8,38.89-16.66V873.3C1336.6,875.16,1331.76,889.78,1313.7,893.9Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                </g>
-                                <g id="Obliques">
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1400.8,871.47a209.52,209.52,0,0,0,2.2,28.67,28.54,28.54,0,0,0,.67,3.21s25.4,1.32,38.53-3.21l.07,0a26.25,26.25,0,0,1,3.7-1.5l0,0c6.6-3.1,11.33-7.79,13.54-12.78a15.39,15.39,0,0,0,1.4-6.33c0-6-5.83-9.34-11.88-11.11l0,0a62.74,62.74,0,0,0-13.54-2.1C1421.56,870.73,1400.8,871.47,1400.8,871.47Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1461,879.48a15.39,15.39,0,0,1-1.4,6.33c11.2-10.32,10.27-24.47,10.27-24.47-2.24-4.19-4.86-9.42-7.2-15a23.58,23.58,0,0,1-13.51,22l0,0C1455.12,870.14,1460.91,873.44,1461,879.48Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1457,829.05c.07.31.12.62.21,1a93.78,93.78,0,0,0,5.41,16.33v0c2.34,5.57,5,10.8,7.2,15,3.07,5.74,5.43,9.53,5.43,9.53-4-13.72-7.91-30.12-7.41-40.87.55-11.63,4.17-22.14,7.35-30l-.36.34c-2.36,2.26-14.78,14.15-18.36,17.06A32.36,32.36,0,0,0,1457,829.05Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1216.19,829.05c-.07.31-.12.62-.21,1a93.78,93.78,0,0,1-5.41,16.33v0c-2.34,5.57-5,10.8-7.2,15-3.07,5.74-5.43,9.53-5.43,9.53,4-13.72,7.91-30.12,7.41-40.87-.55-11.63-4.17-22.14-7.36-30l.37.34c2.36,2.26,14.78,14.15,18.36,17.06A32.36,32.36,0,0,1,1216.19,829.05Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1435.57,866.25a62.74,62.74,0,0,1,13.54,2.1,23.58,23.58,0,0,0,13.51-22v0a93.78,93.78,0,0,1-5.41-16.33c-.54,2.72-3.07,11.92-14.1,18,2.66,1.89,4.48,4.27,4.9,7.22C1448.71,860.31,1443.13,863.82,1435.57,866.25Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1400.8,871.47s20.76-.74,34.77-5.22c7.56-2.43,13.14-5.94,12.44-11-.42-3-2.24-5.33-4.9-7.22-10.42-7.53-33.61-7.93-33.61-7.93-.64.4-6.84,12.25-7.77,16.77A77.2,77.2,0,0,0,1400.8,871.47Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1272.39,871.47s-20.76-.74-34.77-5.22c-7.56-2.43-13.14-5.94-12.44-11,.42-3,2.24-5.33,4.89-7.22,10.43-7.53,33.62-7.93,33.62-7.93.64.4,6.84,12.25,7.77,16.77A78,78,0,0,1,1272.39,871.47Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1406.83,943.25c.46,9.87.76,18.88.76,23.41.13,3.28.24,6.6.32,10,0,0,30.21,1.6,46.16-22.35.81-8.2,1.62-15.14,2.33-19.43,0,0,0-.09,0-.23.24-1.1,1.16-4.37,2.47-8.91C1442.94,943,1406.83,943.25,1406.83,943.25Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1403.67,903.35c1,3.42,2.19,20.6,3,36.61.06,1.1.12,2.2.17,3.29,0,0,36.11-.24,52.07-17.51,1.46-5,3.41-11.63,5.46-18.47,0,0-.07-5.85-3.41-7.87-5.12-3.07-11.13-2-14.94-.81l0,0a34,34,0,0,1-3.7,1.5l-.07,0C1429.07,904.67,1403.67,903.35,1403.67,903.35Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1446,898.59c3.81-1.22,9.82-2.26,14.94.81,3.34,2,3.41,7.87,3.41,7.87,5.1-17.1,10.78-35.87,10.9-36.35v0s-2.36-3.79-5.43-9.53c0,0,.93,14.15-10.27,24.47C1457.34,890.8,1452.61,895.49,1446,898.59Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1409.49,840.06s23.19.4,33.62,7.93c11-6.07,13.56-15.27,14.09-18-.08-.33-.14-.64-.21-1a32.58,32.58,0,0,1-.53-11.66c-1.74,1.43-11.59,10.21-16.11,12.61-7.15,3.8-30.36,9.92-30.81,10A.06.06,0,0,0,1409.49,840.06Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1272.39,871.47a207.71,207.71,0,0,1-2.21,28.67,24.64,24.64,0,0,1-.67,3.21s-25.39,1.32-38.52-3.21l-.07,0a26.62,26.62,0,0,0-3.71-1.5s0,0,0,0c-6.6-3.1-11.34-7.79-13.54-12.78a15.24,15.24,0,0,1-1.4-6.33c0-6,5.83-9.34,11.87-11.11,0,0,0,0,0,0a62.74,62.74,0,0,1,13.54-2.1C1251.63,870.73,1272.39,871.47,1272.39,871.47Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1212.24,879.48a15.24,15.24,0,0,0,1.4,6.33c-11.2-10.32-10.27-24.47-10.27-24.47,2.24-4.19,4.86-9.42,7.2-15a23.55,23.55,0,0,0,13.51,22s0,0,0,0C1218.07,870.14,1212.28,873.44,1212.24,879.48Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1263.68,840.06c-.45,0-23.28.47-33.6,7.92-11-6.06-13.56-15.26-14.1-18,.09-.33.14-.64.21-1a32.36,32.36,0,0,0,.53-11.66c1.74,1.43,11.6,10.21,16.11,12.61,7.15,3.8,30.36,9.92,30.81,10A0,0,0,0,1,1263.68,840.06Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1237.62,866.25a62.74,62.74,0,0,0-13.54,2.1,23.55,23.55,0,0,1-13.51-22v0A94.63,94.63,0,0,0,1216,830c.53,2.72,3.07,11.92,14.09,18-2.65,1.89-4.48,4.27-4.89,7.22C1224.47,860.31,1230.06,863.82,1237.62,866.25Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1331.2,1171.07c-18.79-4-84-23.46-112-103.51q2.19-19.44,4.4-38.87c1.08-4.93-1.72-46.83-4.47-74.38,15.6,23.43,44.85,22.4,46.11,22.36h0c-.08,3-.11,6.12-.11,9.28h0q0,10.78.48,22.35c.5,11.37,1.4,22.14,2.54,32.29,1.93,11.32,6.15,25.39,13.2,40.92C1291.2,1103.19,1331.2,1171.07,1331.2,1171.07Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1266.36,943.25c-.47,9.87-.76,18.88-.76,23.41-.14,3.28-.24,6.6-.33,10,0,0-30.2,1.6-46.15-22.35-.81-8.2-1.62-15.14-2.33-19.43a1.74,1.74,0,0,1,0-.23c-.25-1.1-1.16-4.37-2.47-8.91C1230.25,943,1266.36,943.25,1266.36,943.25Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1269.51,903.35c-1,3.42-2.19,20.6-3,36.61-.07,1.1-.12,2.2-.17,3.29,0,0-36.11-.24-52.07-17.51-1.46-5-3.41-11.63-5.46-18.47,0,0,.07-5.85,3.41-7.87,5.12-3.07,11.13-2,14.94-.81,0,0,0,0,0,0a35,35,0,0,0,3.71,1.5l.07,0C1244.12,904.67,1269.51,903.35,1269.51,903.35Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1227.18,898.59c-3.81-1.22-9.82-2.26-14.94.81-3.34,2-3.41,7.87-3.41,7.87-5.1-17.1-10.79-35.87-10.91-36.35v0l0,0s2.36-3.79,5.43-9.53c0,0-.93,14.15,10.27,24.47C1215.84,890.8,1220.58,895.49,1227.18,898.59Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo obliquo"
-                                        d="M1449.59,1028.69q2.22,19.44,4.41,38.87c-28,80-93.22,99.49-112,103.51h0s40-67.88,49.81-89.57c7-15.53,11.27-29.6,13.2-40.92,1.13-10.15,2-20.92,2.53-32.29.32-7.59.47-14.95.48-22,0-2.42,0-5-.06-7.43,0-.72,0-1.44,0-2.16h0c1.26,0,30.51,1.07,46.11-22.36C1451.31,981.86,1448.52,1023.76,1449.59,1028.69Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                </g>
-                                <!-- BRAÇOS -->
-                                <g id="Arms">
-                                    <path class="cls-1 combo braco"
-                                        d="M1602.28,1103.14h0c-.27.46-8.84,15.32-11.74,21.36s-7.69,20.61-7.69,20.61c-.23-1-.49-1.94-.78-2.85a41.23,41.23,0,0,1,1.47-27.5c2.24-5.64,12.93-11.31,13.27-11.49h0C1598.49,1103.2,1600.36,1103.15,1602.28,1103.14Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1630,1166.1c-3,2.46-27.73,10-36.07,8-8.08-1.9-16.48-1.57-17.35-3.3h0l0-.2a27.57,27.57,0,0,0,5.64-8.43c2.19-4.82,2-11.43.7-17.08,0,0,4.75-14.47,7.69-20.61s11.47-20.9,11.74-21.36c-.16.49-4.44,13.92-1.79,19,2.08,4,17,11.68,26.42,14.83,0,0,.85,8.26,3.06,12.44S1632.91,1163.64,1630,1166.1Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1673.19,1165.36s-5.89,4.42-11.29,2.46-28.25-23.58-28.25-23.58l27,67.55s2.21,4.66-.74,6.88-7.61-.5-9.33-3.69-18.67-44-21.13-43.48-3.68.25-3.68,3.19,12.28,49.13,11.54,54-3.19,5.64-5.15,5.64-3.93-3.68-4.92-7.85-12.28-47.42-14-47.42-6.64-1.71-6.88,1.73,9.82,40.28,9.57,44.46-1.71,6.13-3.19,6.87a5.34,5.34,0,0,1-6.39-1.72c-1.71-2.45-11.05-47.4-12.28-48.38s-3.68-2.71-3.68-.5,2.95,33.41,2,36.36a4.75,4.75,0,0,1-6.39,2.7c-2-1-7.12-39.06-7.62-40.53-.15-.47-.84-4.18-1.83-9.27.87,1.73,9.27,1.4,17.35,3.3,8.34,2,33.12-5.57,36.07-8s2.21-12.53,0-16.7-3.06-12.44-3.06-12.44a19.66,19.66,0,0,0,6.5,1.39c5.65-.5,11-9.83,11-9.83C1648.39,1134.91,1673.19,1165.36,1673.19,1165.36Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1644.46,1128.52s-5.4,9.33-11,9.83a19.66,19.66,0,0,1-6.5-1.39c-9.39-3.15-24.34-10.87-26.42-14.83-2.65-5.06,1.63-18.49,1.79-19h2.62c4.67,0,9.22.2,11.67.31l-.27-.31S1640.53,1122.13,1644.46,1128.52Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1583.54,1114.77a41.23,41.23,0,0,0-1.47,27.5c.29.91.55,1.87.78,2.85,1.32,5.65,1.49,12.26-.7,17.08a27.57,27.57,0,0,1-5.64,8.43c-2.08-10.72-5.5-27.35-8.26-32.72-3.21-6.26-2.44-24.27-1.46-25,1.37-2.93,13.43-7.08,22.81-8.81,1.65-.29,3.24-.51,4.65-.65.78-.07,1.64-.13,2.56-.17C1596.47,1103.46,1585.78,1109.13,1583.54,1114.77Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1072.7,1122.13c-2.08,4-17,11.68-26.42,14.83a19.66,19.66,0,0,1-6.5,1.39c-5.65-.5-11-9.83-11-9.83,3.93-6.39,28.15-25.38,28.15-25.38l-.26.31c2.45-.11,7-.28,11.67-.31h2.62C1071.07,1103.64,1075.35,1117.07,1072.7,1122.13Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1096.67,1170.63a.69.69,0,0,0,0,.2h0c-.89,1.72-9.27,1.39-17.34,3.29-8.35,2-33.12-5.57-36.07-8s-2.21-12.53,0-16.7,3.06-12.44,3.06-12.44c9.39-3.15,24.34-10.87,26.42-14.83,2.65-5.06-1.63-18.49-1.79-19,.27.46,8.84,15.32,11.74,21.36s7.68,20.61,7.68,20.61c-1.31,5.65-1.49,12.26.71,17.08A27.65,27.65,0,0,0,1096.67,1170.63Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1096.63,1170.84c-1,5.08-1.67,8.79-1.83,9.26-.49,1.47-5.65,39.55-7.61,40.53a4.75,4.75,0,0,1-6.39-2.7c-1-3,2-34.15,2-36.36s-2.46-.49-3.69.5-10.56,45.93-12.27,48.38a5.34,5.34,0,0,1-6.39,1.72c-1.48-.74-3-2.7-3.2-6.87s9.83-41,9.58-44.46-5.15-1.73-6.88-1.73-13,43.24-14,47.42-3,7.85-4.92,7.85-4.42-.74-5.16-5.64,11.55-51.1,11.55-54-1.23-2.7-3.68-3.19-19.41,40.29-21.13,43.48-6.39,5.9-9.34,3.69-.73-6.88-.73-6.88l27-67.55s-22.85,21.61-28.25,23.58-11.3-2.46-11.3-2.46,24.81-30.45,28.74-36.84c0,0,5.4,9.33,11,9.83a19.66,19.66,0,0,0,6.5-1.39s-.85,8.26-3.06,12.44-2.94,14.24,0,16.7,27.72,10,36.07,8C1087.36,1172.23,1095.74,1172.56,1096.63,1170.84Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1091.12,1142.27c-.29.91-.55,1.87-.79,2.85,0,0-4.74-14.47-7.68-20.61s-11.47-20.9-11.74-21.36h0c1.91,0,3.78.06,5.46.14h0c.33.18,11,5.85,13.27,11.49A41.35,41.35,0,0,1,1091.12,1142.27Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1104.94,1137.91c-2.76,5.37-6.18,22-8.27,32.72a27.65,27.65,0,0,1-5.63-8.43c-2.2-4.82-2-11.43-.71-17.08.24-1,.5-1.94.79-2.85a41.35,41.35,0,0,0-1.47-27.5c-2.25-5.64-12.94-11.31-13.27-11.49.91,0,1.77.1,2.56.17,1.41.14,3,.36,4.65.65,9.37,1.73,21.43,5.88,22.81,8.81C1107.38,1113.64,1108.15,1131.65,1104.94,1137.91Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1589.6,1104.1c-9.38,1.73-21.44,5.88-22.81,8.81.51-1.79,2.39-16.53-3-24.81-20.86-32.17-43.25-66.92-50.43-102.52-5.29-26.24-2.43-40.81-2.43-40.81l.15.15a46,46,0,0,1,6.34-1.93c.28,1.39,12,60.37,36.08,92.73C1573.85,1063,1589.6,1104.1,1589.6,1104.1Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1604.9,1103.14h-2.62c-1.92,0-3.79.06-5.47.14h0c-.92,0-1.78.1-2.56.17-1.41.14-3,.36-4.65.65,0,0-15.75-41.07-36.08-68.38-24.09-32.36-35.8-91.34-36.08-92.73A46.31,46.31,0,0,1,1548,946.9c.66,1.83,1.21,17.16,15.86,48.35C1576.25,1021.74,1601.16,1075,1604.9,1103.14Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1616.57,1103.45c-2.45-.11-7-.28-11.67-.31-3.74-28.17-28.65-81.4-41.09-107.89-14.65-31.19-15.2-46.52-15.86-48.35,0,0-1.66-17.51,2.16-26.77,5.32-12.89,10.94-23.36,12.35-32.19.29,2.85,1.43,10.79,5.63,25.45,5.4,19,16.86,22.45,21.82,40.11s26.39,149.64,26.39,149.64Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1562.6,887v0c0,.29-.09.58-.14.88h0c-1.41,8.83-7,19.3-12.35,32.19-3.82,9.26-2.16,26.77-2.16,26.77a45,45,0,0,0-36.85-2l-.15-.15c-12.27-12.91-26.16-46.06-27.78-50.16-1.22-3.12-4.61-12.49-7.91-23.69v0l0,0v0c-4-13.71-7.9-30.1-7.41-40.85.55-11.54,4.12-22,7.29-29.82,0-.07.05-.13.08-.19v0l0,0h0v0c2.21-5.32,4.19-9.41,4.92-11.86,1.75-5.85,8.16-31,7.11-40.33,0-.26-.09-.48-.09-.68l45.7,39,22.92,19.54,0,.05h0s6.93,13.23,7.83,50C1564.06,870.71,1563.46,880.6,1562.6,887Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1110.59,887v0c0,.29.09.58.14.88h0c1.41,8.83,7,19.3,12.35,32.19,3.82,9.26,2.15,26.77,2.15,26.77a45,45,0,0,1,36.86-2l.15-.15c12.27-12.91,26.16-46.06,27.78-50.16,1.22-3.12,4.61-12.49,7.91-23.69v-.07c4-13.71,7.9-30.1,7.4-40.85-.54-11.54-4.11-22-7.28-29.82,0-.07,0-.13-.08-.19l0,0v0h0v0c-2.2-5.32-4.19-9.41-4.91-11.86-1.75-5.85-8.16-31-7.11-40.33,0-.26.08-.48.08-.68l-45.69,39-22.92,19.54-.05.05h0s-6.93,13.23-7.83,50C1109.12,870.71,1109.73,880.6,1110.59,887Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1159.81,985.58c-7.18,35.6-29.58,70.35-50.43,102.52-5.38,8.28-3.5,23-3,24.81-1.38-2.93-13.44-7.08-22.81-8.81,0,0,15.75-41.07,36.08-68.38,24.09-32.36,35.8-91.34,36.07-92.73a46.17,46.17,0,0,1,6.35,1.93l.15-.15S1165.1,959.34,1159.81,985.58Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1155.74,943c-.27,1.39-12,60.37-36.07,92.73-20.33,27.31-36.08,68.38-36.08,68.38-1.66-.29-3.24-.51-4.65-.65-.79-.07-1.65-.13-2.56-.17h0c-1.68-.08-3.55-.13-5.46-.14h-2.62c3.74-28.17,28.65-81.4,41.09-107.89,14.65-31.19,15.2-46.52,15.85-48.35A46.33,46.33,0,0,1,1155.74,943Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo braco"
-                                        d="M1125.23,946.9c-.65,1.83-1.2,17.16-15.85,48.35-12.44,26.49-37.35,79.72-41.09,107.89-4.67,0-9.22.2-11.67.31l.26-.31s21.44-132,26.4-149.64,16.42-21.16,21.81-40.11c4.2-14.66,5.34-22.6,5.64-25.45,1.41,8.83,7,19.3,12.35,32.19C1126.9,929.39,1125.23,946.9,1125.23,946.9Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                </g>
-                                <g id="Chest_and_shoulders" data-name="Chest and shoulders">
-                                    <path class="cls-1 combo peitombro"
-                                        d="M1212.83,714.22c-.14.36-.29.72-.47,1.08a.67.67,0,0,1-.1.21c-3.18,6.58-11.42,14.49-17.87,21.09a2.28,2.28,0,0,1-.22.22,67.74,67.74,0,0,0-6.71,7.31A13.08,13.08,0,0,0,1186,747l-45.7,39-22.91,19.54-.06.05h0s-18.38-80.4,8.47-106.41c27.3-26.41,64.82-22,71.42-22.59h0l25.83,6,0,0S1223.53,686.65,1212.83,714.22Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo peitombro"
-                                        d="M1336.59,722.41V826c-1.2,8.62-20,15-38.88,16.66a108.43,108.43,0,0,1-34-2.55h0a0,0,0,0,0,0,0c-.45-.11-23.66-6.23-30.81-10-4.51-2.4-14.37-11.18-16.11-12.61-3.58-2.92-16-14.8-18.37-17.06-.17-.17-.31-.29-.35-.34l0,0v0h0v0c-2.22-5.32-4.2-9.41-4.92-11.86-1.76-5.85-8.16-31-7.12-40.33,0-.26.1-.48.1-.68a13.08,13.08,0,0,1,1.45-2.9,67.74,67.74,0,0,1,6.71-7.31,2.28,2.28,0,0,0,.22-.22c6.45-6.6,14.69-14.51,17.87-21.09a.67.67,0,0,0,.1-.21c.18-.36.33-.72.47-1.08,10.7-27.57,10.26-31.62,10.26-31.62l0,0c1.13-.48,58.92-3,79.74.64,0,0,17,.25,26,6.63C1334.57,694,1336.44,692.11,1336.59,722.41Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo peitombro"
-                                        d="M1555.87,805.57h0l-.06-.05L1532.88,786l-45.7-39a13.08,13.08,0,0,0-1.45-2.9,68.8,68.8,0,0,0-6.71-7.31,2.34,2.34,0,0,1-.23-.22c-6.43-6.6-14.68-14.51-17.86-21.09a2.12,2.12,0,0,1-.11-.21c-.17-.36-.32-.72-.46-1.08-10.7-27.57-10.26-31.62-10.26-31.62l0,0,25.82-6h0c6.6.6,44.13-3.82,71.42,22.59C1574.23,725.17,1555.87,805.57,1555.87,805.57Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo peitombro"
-                                        d="M1336.59,722.41V826c1.2,8.62,20,15,38.89,16.66a108.43,108.43,0,0,0,34-2.55h0a.06.06,0,0,1,0,0c.45-.11,23.66-6.23,30.8-10,4.52-2.4,14.38-11.18,16.11-12.61,3.59-2.92,16-14.8,18.37-17.06l.36-.34,0,0v0h0v0c2.22-5.32,4.2-9.41,4.92-11.86,1.75-5.85,8.16-31,7.12-40.33,0-.26-.1-.48-.1-.68a13.08,13.08,0,0,0-1.45-2.9,68.8,68.8,0,0,0-6.71-7.31,2.28,2.28,0,0,1-.22-.22c-6.45-6.6-14.69-14.51-17.87-21.09a.5.5,0,0,1-.1-.21c-.18-.36-.33-.72-.47-1.08-10.7-27.57-10.26-31.62-10.26-31.62l0,0c-1.13-.48-58.92-3-79.75.64,0,0-17,.25-25.95,6.63C1338.62,694,1336.75,692.11,1336.59,722.41Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                </g>
-                                <g id="Head_and_neck" data-name="Head and neck">
-                                    <path class="cls-1 combo trapezio"
-                                        d="M1302.81,683.22c-20.82-3.64-78.61-1.12-79.74-.64l-25.83-6c.77-.29,57.37-13.59,70.44-25.36,10.86-9.76,16.89-41.73,17.5-45.09l.06-.28h0c.36.51,16.42,23.39,19.66,38.69l.12.61C1308,659.8,1307.7,678.55,1302.81,683.22Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo trapezio"
-                                        d="M1370.37,683.22c20.83-3.64,78.62-1.12,79.75-.64l25.83-6c-.77-.29-57.37-13.59-70.45-25.36-10.85-9.76-16.89-41.73-17.49-45.09l-.06-.28h0c-.35.51-16.41,23.39-19.65,38.69l-.12.61C1365.19,659.8,1365.49,678.55,1370.37,683.22Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo trapezio"
-                                        d="M1388,605.84c-1.24-7.41,0-14.89,1.23-19.44-17.65,34.08-46.52,46.33-52.6,46.33s-34.75-12.17-52.41-46a43.23,43.23,0,0,1,1.06,19.11c.36.51,16.42,23.39,19.66,38.69l.12.61c3,14.66,2.68,33.41-2.21,38.08,0,0,17,.25,26,6.63,5.8,4.14,7.67,2.26,7.82,32.56.16-30.3,2-28.42,7.83-32.56l.47-.32c5-3.34,12.18-4.91,17.65-5.65a74.21,74.21,0,0,1,7.41-.64h0l.09,0h.3c-4.94-4.73-5.2-23.94-2.08-38.69C1371.57,629.06,1388,605.84,1388,605.84Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo trapezio"
-                                        d="M1401.49,565.88c-2.23,1.73-3.73,1.6-4.47,1.34,0-.09,0-.18.08-.27a167.77,167.77,0,0,0,5.58-26.53c1.21-8.29,2.19-17.16,2.61-26.14h0l0-.69c1.62-1.65,5.85-5.26,7.74-.07C1419,529.79,1411.18,558.36,1401.49,565.88Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo trapezio"
-                                        d="M1276.17,567.21c-.73.27-2.24.4-4.47-1.33-9.69-7.52-17.5-36.09-11.57-52.37,1.89-5.19,6.12-1.58,7.74.07l0,.69h0c.42,9,1.4,17.85,2.61,26.14A165.79,165.79,0,0,0,1276.17,567.21Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                    <path class="cls-1 combo trapezio"
-                                        d="M1405.32,513.58c0,.23,0,.46,0,.69h0c-.41,9-1.4,17.85-2.61,26.14a168.49,168.49,0,0,1-5.56,26.53c0,.09-.06.18-.09.27-1.46,4.7-6.29,16.1-6.54,16.59a1.66,1.66,0,0,1-.06.16c-.41.82-.82,1.64-1.23,2.43-17.65,34.08-46.52,46.33-52.6,46.33s-34.75-12.17-52.41-46c-.51-1-1-1.93-1.47-2.91h0c-.23-.49-5.07-11.9-6.53-16.6a164.51,164.51,0,0,1-5.65-26.79c-1.22-8.29-2.2-17.16-2.62-26.14h0c0-.23,0-.46,0-.69-.81-18.7.84-37.85,7.84-53.31,14.55-32,60.88-28.94,60.88-28.94s46.34-3.11,60.88,28.94C1404.48,475.73,1406.12,494.88,1405.32,513.58Z"
-                                        transform="translate(-998.49 -429.75)">
-                                        <title></title>
-                                    </path>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-
-            </div>
-
-            <div class="chart-container" style="position: relative; height:10vh; width:40vw">
+            <!-- <div class=" chart-container" style="position: relative; height:10vh; width:40vw">
                 <canvas id="myChart"></canvas>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
 
 </html>
-<script>
-    function seleciona(x) {
-        var guardaData = x.style.fill = `var(--color-primary)`;
-        console.log(guardaData);
-    }
-</script>
-<script>
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-    ];
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'My First dataset',
-            label: 'My First dataset2',
-            label: 'My First dataset',
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-    };
-
-    const config = {
-        type: 'line',
-        data: data,
-        options: {}
-    };
-</script>
-<script>
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-</script>
-
-<script>
-    var modal = document.getElementById("div_modal");
-    var botao = document.getElementById("botao");
-    var span = document.getElementsByClassName("close")[0];
-
-    function adicionarTreino() {
-        modal.style.display = "flex";
-    }
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
-
-<script>
-    function escolheFrequencia() {
-        var qtdFrequencia = Number(select_frequencia.value);
-        div_select_frequencia.innerHTML = null;
-
-    }
-
-    function escolheMusculo() {
-        var musculoTreinado = Number()
-    }
-
-    function desempenho() {
-
-    }
-</script>
+<script src="js/indexUsuario.js"></script>
+<script src="js/body.js"></script>

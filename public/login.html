@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="../css/class.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link href='https://css.gg/css' rel='stylesheet'>
     <title>Login</title>
     <script src="https://kit.fontawesome.com/cbc73789ee.js" crossorigin="anonymous"></script>
@@ -59,16 +60,18 @@
                 <p class="p-light"><a><span class="span_esqueci_senha">Esqueci minha senha</span></a></p>
 
             </div>
-            <button class="button" id="botao_loga" onclick="entrar()">Entrar</button>
+            <div class="flex-column valida">
+                <button class="button" id="botao_loga" onclick="entrar()">Entrar</button>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/ball2.svg" id="loading-gif">
+                </div>
+            </div>
         </div>
-        <div id="div_aguardar" class="loading-div">
-            <img src="./assets/ball2.svg" id="loading-gif">
-        </div>
-        <div></div>
+        <div class="space"></div>
     </div>
     <!-- RODAPÉ -->
 
-    <footer class="container-lg flex-column">
+    <footer class="container-lg flex-column ">
         <div class="flex-row div_footer_item">
             <div>
                 <img src="../images/Ativo 5.png" width="220px" id="logo">
@@ -95,6 +98,7 @@
 <script>
     function entrar() {
         aguardar();
+        botao_loga.style.display = "none";
 
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
@@ -103,6 +107,8 @@
             //cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
+            botao_loga.style.display = "block";
+
             return false;
         } else {
             setInterval(sumirMensagem, 5000)
@@ -132,11 +138,11 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
 
                     setTimeout(function () {
                         window.location = "./indexUsuario.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 2000); // apenas para exibir o loading
 
                 });
 
@@ -147,6 +153,8 @@
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);
+                    botao_loga.style.display = "block";
+
                 });
             }
 

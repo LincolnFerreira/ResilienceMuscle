@@ -1,5 +1,7 @@
 .boxes {
+    margin: 30px;
     justify-content: space-evenly;
+    height: auto;
 }
 
 .card-box {
@@ -13,6 +15,26 @@
     color: var(--desabled);
     font-weight: bold;
 
+}
+
+.container-lg h1 {
+    padding-top: 20px;
+
+    font-family: "Facon";
+}
+
+.container_projeto_frase {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    width: 100%;
+    text-align: center;
+}
+
+#contem-texto {
+    margin-top: 30px;
+
+    width: 50%;
 }
 
 #muzy-box {

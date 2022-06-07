@@ -1,0 +1,15 @@
+body {
+    height: 100%;
+}
+
+/* 
+.container-lg {
+    justify-content: end;
+} */
+
+footer {
+    display: flex;
+    min-height: 27%;
+    position: absolute;
+    justify-content: end !important;
+}

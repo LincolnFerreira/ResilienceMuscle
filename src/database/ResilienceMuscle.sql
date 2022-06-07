@@ -7,6 +7,7 @@ CREATE TABLE usuario (
 	nome varchar(45),
     sobrenome varchar(45),
 	dtNasc date,
+    sexo varchar(6),
     email varchar(60),
     senha varchar(30),
 	classificacao boolean,
@@ -77,16 +78,21 @@ CREATE TABLE desempenho (
                                 musculo = "gluteo" or
                                 musculo = "coluna"),   
 	exercicio varchar(40),
-	penultimaSerieRepeticoes int,
-    penultimaSeriePeso decimal (5,2),
-    ultimaSerieRepeticoes int,
-    ultimaSeriePeso decimal (5,2),
+    peso decimal(6,2),
+	intensidade varchar(20) check(intensidade = 'Baixa' or intensidade = 'Intermediária' or intensidade = 'Média' or intensidade = 'Submáxima' or intensidade = 'Máxima' or intensidade = 'Supermáxima'),
+	repeticoesMax int,
+	repeticoesMin int,
     fkUsuario int,
     primary key (idTreino, fkUsuario),
     foreign key (fkUsuario) references usuario(idUsuario)
 );
 
- insert into desempenho (data, musculo, exercicio, penultimaSerieRepeticoes, penultimaSeriePeso, ultimaSerieRepeticoes, ultimaSeriePeso, fkUsuario) VALUES 
-	('2022/05/01','peito','supino','30','12','30','8','1'),
-	('2022/05/01','peito','remada alta','45','12','45','9','1'),
-	('2022/05/01','peito','quadríceps','50','15','50','12','1');
+select count(idTreino) from desempenho;
+select count(data) from desempenho where fkUsuario = 1;
+ insert into desempenho (data, musculo, exercicio, intensidade, peso, repeticoesMax, repeticoesMin, fkUsuario) VALUES 
+	('2022/05/01','peito','supino','Submáxima','5','6','15','1'),
+	('2022/05/02','costas','terra','Submáxima','10','6','15','1'),
+	('2022/05/03','quadríceps','agachamento','Submáxima','15','12','20','1');
+    
+insert into desempenho (data, musculo, exercicio, intensidade, peso, repeticoesMax, repeticoesMin, fkUsuario) VALUES 
+	('2022/05/01','peito','abs','Intermediária','10','30','15','1');     

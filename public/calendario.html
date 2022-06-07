@@ -15,11 +15,40 @@
     <script src="./js/funcoes.js"></script>
 
 </head>
+<style>
+    .pai {
+        color: white;
+    }
+</style>
 
 <body>
     <div id="divteste"></div>
     <div id="calendario">
+        <div class="pai"
+            style="display: flex; flex-direction: row; justify-content:space-around;align-items: center; width: 100%; height: 300px;">
+            <div>
+                <div
+                    style="display: flex; flex-direction: row; justify-content:space-between;align-items: center;margin: 2px;width: 300px;  background-color: rgb(31, 31, 110); height: 50px; border-radius: 40px; padding-right: 10px;">
+                    <input type="radio" name="teste"><span>1</span>
+                </div>
 
+                <div
+                    style="display: flex; flex-direction: row; justify-content:space-between;align-items: center; margin: 2px;width: 300px; background-color: rgb(31, 31, 110); height: 50px; border-radius: 40px; padding-right: 10px;">
+                    <input type="radio" name="teste"><span>2</span>
+                </div>
+
+                <div
+                    style="display: flex; flex-direction: row; justify-content:space-between;align-items: center;margin: 2px;width: 300px; background-color: rgb(31, 31, 110); height: 50px; border-radius: 40px; padding-right: 10px;">
+                    <input type="radio" name="teste"><span>3</span>
+                </div>
+
+                <div
+                    style="display: flex; flex-direction: row; justify-content:space-between;align-items: center;margin: 2px;width: 300px; background-color: rgb(31, 31, 110); height: 50px; border-radius: 40px; padding-right: 10px;">
+                    <input type="radio" name="teste"><span>4</span>
+                </div>
+            </div>
+            <img src="./images/muzy-box-original.png" width="300px">
+        </div>
     </div>
 </body>
 
@@ -29,6 +58,7 @@
     ano = data.getFullYear();
     mes = data.getMonth() + 1;
     var maxDia = qtdDiaMes();
+    console.log(data.getDate());
 
     function qtdDiaMes() {
         return new Date(ano, mes, 0).getDate().toLocaleString('pt-BR');
@@ -60,7 +90,7 @@
         }
     }
 
-    
+
     function populaSemana() {
         var total = 0;
         var dia = 1;
@@ -73,9 +103,9 @@
                 var plotaDia = `${total}semana`;
                 let dia = document.createElement('td');
                 dia.setAttribute("id", `${i}`);
-                dia.textContent =i;
-                document.getElementById(total+"semana").appendChild(dia);
-                console.log(total+"semana")
+                dia.textContent = i;
+                document.getElementById(total + "semana").appendChild(dia);
+                console.log(total + "semana")
             }
         }
     }

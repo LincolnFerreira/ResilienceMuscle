@@ -1,17 +1,26 @@
 @import "colors.css";
+
 @font-face {
     font-family: Jura;
     src: url(../css/fonts/Jura-VariableFont_wght.ttf);
-  
+
 }
-body{
+
+@font-face {
+    font-family: Facon;
+    src: url(../css/fonts/Facon.ttf);
+
+}
+
+body {
     background-color: var(--dark);
     color: var(--white);
     font-family: Jura;
-    overflow-x:hidden;
+    overflow-x: hidden;
 
 }
-.div_banner_cadastro{
+
+.div_banner_cadastro {
     background-image: url(../images/background-cadastro.png);
 
     background-size: cover;
@@ -20,78 +29,84 @@ body{
     width: 100%;
     z-index: -1;
 }
-.div_banner_index{
+
+.div_banner_index {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark) 100%), url(../images/teste2-ConversImagem.jpg);
     background-repeat: no-repeat;
     position: absolute;
-    background-size:cover;
-    bottom: 20%;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-.div_banner_projetos{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark) 100%), url(../images/academia.png);
-    background-repeat: no-repeat;
-    position: absolute;
-    background-size:cover;
+    background-size: cover;
     bottom: 20%;
     width: 100%;
     height: 100%;
     z-index: -1;
 }
 
-.flex-column{
+.div_banner_projetos {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, var(--dark) 100%), url(../images/academia.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    bottom: 20%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.flex-column {
     display: flex;
     flex-direction: column;
 }
-hr{
-	border-width:0;
-	background: var(--desabled)  center no-repeat;
+
+hr {
+    border-width: 0;
+    background: #dcdcdc center no-repeat;
     width: 80%;
     height: 0.20px;
 }
 
-.flex-row{
+.flex-row {
     display: flex;
     flex-direction: row;
 }
-.container-lg{
+
+.container-lg {
     display: flex;
     width: 100%;
     min-height: 300px auto;
     justify-content: center;
     margin: 0;
-    padding: 20px 50px 20px 50px;
 }
 
-.container-column{
+.container-column {
     flex-direction: column;
     align-items: center;
 }
-.container-md{
+
+.container-md {
     width: 50%;
     display: flex;
     margin: 10px;
 }
-.button{
+
+.button {
     border-radius: 4px;
     padding: 10px 15px 10px 15px;
     margin: 10px 10px 10px 10px;
-    font-weight:500;
+    font-weight: 500;
     align-items: center;
     border: none;
 
 }
-.destaque{
-    color: var(--green);
-}
-.button:hover{
-    -webkit-box-shadow: 0px 7px 19px -3px #000000; 
+
+
+
+.button:hover {
+    -webkit-box-shadow: 0px 7px 19px -3px #000000;
     box-shadow: 0px 7px 19px -3px #000000;
     -webkit-transition-duration: 0.3s;
 }
-.button-border{
+
+.button-border {
     border-radius: 24px;
     padding-left: 34px;
     padding-right: 34px;
@@ -100,6 +115,7 @@ hr{
     background-color: var(--green);
     color: var(--white);
 }
+
 .button-destaque {
     border: solid;
     border-color: transparent;
@@ -107,48 +123,64 @@ hr{
     color: var(--white);
 
 }
-.font-title{
+
+.font-title {
     font-size: 40px;
     text-align: center;
 }
-.font-destaque{
+
+.font-destaque {
     font-weight: bolder;
     color: var(--primary-light);
 }
-.p_desabled{
+
+.p_desabled {
     color: var(--desabled);
 }
-.button-destaque:hover .gg-arrow-right{
+
+.button-destaque:hover .gg-arrow-right {
     animation: animation-to-right .4s ease infinite alternate;
 }
+
 @keyframes animation-to-right {
-    from{
+    from {
         transform: translateX(0);
-    }    
-    to{
+    }
+
+    to {
         transform: translateX(4px);
-    }    
+    }
 }
 
-.span_cadastro_login{
+.span_cadastro_login {
     color: var(--color-primary-light);
     cursor: pointer;
 
 }
-.span_cadastro_login:hover{
+
+.span_cadastro_login:hover {
     color: var(--color-primary-light);
     text-overflow: clip;
 }
-.div_form{
+
+.div_form {
     position: relative;
     margin: 15px 0;
     margin-left: 15px;
 
 }
-.input_form::placeholder{
+
+.dark {
+    color: var(--white);
+    background-color: var(--dark);
+}
+
+.input_form::placeholder {
     color: transparent;
 }
-.label_form{
+
+.label_form,
+.label_form_dark {
     position: absolute;
     bottom: 8px;
     left: 10px;
@@ -157,7 +189,12 @@ hr{
     transition: all 0.5s ease-in-out;
 
 }
-.input_form{
+
+.label_form_dark {
+    color: var(--dark) !important;
+}
+
+.input_form {
     width: 100%;
     padding: 20px 5px 5px 5px;
     border: 0;
@@ -168,69 +205,87 @@ hr{
     transition: all 0.5s ease-in-out;
 
 }
- .div_form .input_form:focus,
- .div_form .input_form:valid{
+
+.div_form .input_form:focus,
+.div_form .input_form:valid {
     border-color: var(--color-primary);
 }
-.input_form:focus ~ .label_form{
+
+.input_form:focus~.label_form {
     transform: translateY(-19px);
-    font-size:12px;
+    font-size: 12px;
     color: var(--white);
-    
+
 }
-.input_form:valid ~ .label_form{
+
+.input_form:valid~.label_form {
     transform: translateY(-19px);
-    font-size:12px;
+    font-size: 12px;
     color: var(--white);
-    
+
 }
 
 
-.fa{
-    margin: 10px!important;
+.fa {
+    margin: 10px !important;
     cursor: pointer;
 }
-.fa-facebook-square:hover{
+
+.fa-facebook-square:hover {
     color: #4267B2;
 }
-.fa-twitter-square:hover{
+
+.fa-twitter-square:hover {
     color: #1DA1F2;
 }
-.fa-linkedin:hover{
+
+.fa-linkedin:hover {
     color: #0072b1;
 }
-.fa-instagram:hover{
+
+.fa-instagram:hover {
     color: #cc2366;
 }
-.icones{
+
+.icones {
     justify-content: center;
 }
-.p-light{
+
+.p-light {
     font-weight: lighter;
     font-size: 16px;
 }
-#title_cadastro{
+
+#title_cadastro {
     font-size: 40px;
 }
 
-.container-start{
+.container-start {
     justify-content: start;
 }
-.container-cadastro{
+
+.container-cadastro {
     align-items: center;
     margin-left: 10%;
 }
-.container-login{
-    min-height: 500px;
+
+.container-login {
+    min-height: 600px;
     align-items: center;
     margin-left: 10%;
 }
-.span_esqueci_senha{
+
+.span_esqueci_senha {
     color: var(--primary-light);
 }
-.span_esqueci_senha:hover{
+
+.span_esqueci_senha:hover {
     align-self: flex-end;
     cursor: pointer;
     text-decoration-line: underline;
     color: var(--primary-light);
+}
+
+.destaque {
+    color: var(--green) !important;
 }

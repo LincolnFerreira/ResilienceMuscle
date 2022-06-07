@@ -79,13 +79,59 @@ function cadastrar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else{
+    } else {
 
-    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-    usuarioModel.cadastrar(nome, sobrenome, dtNasc, email, senha)
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.cadastrar(nome, sobrenome, dtNasc, email, senha)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    // 500 = erro interno do servidor!!
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function listarHistorico(req, res) {
+    idUsuario = req.params.idUsuario;
+
+    usuarioModel
+        .listarHistorico(idUsuario)
+        .then(function (resultado) {
+            res.status(200).json(resultado);
+        }).catch(function (erro) {
+            res.status(500).json(erro);
+        });
+}
+
+function cadastroTreino(req, res) {
+    var idUsuario = req.params.idUsuario;
+    var input_musculo = req.params.input_musculo;
+    var input_exercicio = req.params.input_exercicio;
+    var input_peso = req.params.input_peso;
+    var select_intensidade = req.params.select_intensidade;
+    var repeticao_maxima = req.params.repeticao_maxima;
+    var repeticao_minima = req.params.repeticao_minima;
+    usuarioModel.cadastroFinal(
+            idUsuario,
+            input_musculo,
+            input_exercicio,
+            input_peso,
+            select_intensidade,
+            repeticao_maxima,
+            repeticao_minima)
         .then(
             function (resultado) {
-                res.json(resultado);
+                res.status(200).json(resultado);
             }
         ).catch(
             function (erro) {
@@ -99,11 +145,47 @@ function cadastrar(req, res) {
             }
         );
 }
+
+function cadastroFinal(req, res) {
+    idUsuario = req.params.idUsuario;
+    console.log("cadastro Final" + idUsuario)
+    sexo = req.body.sexo;
+    classificacao = req.body.classificacao;
+    frequencia = req.body.frequencia;
+    usuarioModel.cadastroFinal(idUsuario, sexo, classificacao, frequencia)
+        .then(
+            function (resultado) {
+                res.status(200).json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                // 500 = erro interno do servidor!!
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
 }
 
+function kpiMetrica(req, res) {
+    idUsuario = req.params.idUsuario;
+
+    usuarioModel.kpiMetrica(idUsuario)
+        .then(function (resultado) {
+            res.status(200).json(resultado);
+        }).catch(function (erro) {
+            res.status(500).json(erro);
+        })
+}
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    listarHistorico,
+    kpiMetrica,
+    testar,
+    cadastroFinal
 }
